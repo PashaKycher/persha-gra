@@ -4,10 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bsoxkgg7qc1e3" path="res://icon.svg" id="2_gmlin"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6strp"]
-size = Vector2(170, 174)
+size = Vector2(130, 130)
 
 [node name="Player" type="CharacterBody2D" unique_id=934836812]
-motion_mode = 1
 script = ExtResource("1_dovo2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1363193596]

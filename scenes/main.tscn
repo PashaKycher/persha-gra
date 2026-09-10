@@ -2,7 +2,45 @@
 
 [ext_resource type="PackedScene" uid="uid://u7ceubr04yn7" path="res://scenes/player/player.tscn" id="1_o5qli"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6strp"]
+size = Vector2(1000, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5qli"]
+size = Vector2(1000, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
+size = Vector2(30, 600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
+size = Vector2(30, 600)
+
 [node name="Main" type="Node2D" unique_id=1609558246]
 
 [node name="Player" parent="." unique_id=934836812 instance=ExtResource("1_o5qli")]
+z_index = 10
 position = Vector2(500, 300)
+
+[node name="World" type="Node2D" parent="." unique_id=1738006884]
+
+[node name="Ground" type="ColorRect" parent="World" unique_id=1687248568]
+offset_right = 1000.0
+offset_bottom = 600.0
+color = Color(0.30980393, 0.35686275, 0.22745098, 1)
+
+[node name="Walls" type="StaticBody2D" parent="World" unique_id=1300474746]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Walls" unique_id=1204673430]
+position = Vector2(500, 0)
+shape = SubResource("RectangleShape2D_6strp")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="World/Walls" unique_id=1782285011]
+position = Vector2(500, 600)
+shape = SubResource("RectangleShape2D_o5qli")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="World/Walls" unique_id=526766050]
+position = Vector2(0, 300)
+shape = SubResource("RectangleShape2D_0wfyh")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="World/Walls" unique_id=2046645605]
+position = Vector2(1000, 300)
+shape = SubResource("RectangleShape2D_sugp2")
