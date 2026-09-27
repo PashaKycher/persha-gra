@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b7jdw2eeypirc"]
+
+[ext_resource type="Script" uid="uid://brj1wo3gr4213" path="res://scripts/player/inventory.gd" id="1_t68fq"]
+
+[node name="Inventory" type="Control" unique_id=1488999758]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_t68fq")
+
+[node name="Panel" type="Panel" parent="." unique_id=1689311865]
+layout_mode = 0
+offset_left = -33.0
+offset_top = -22.0
+offset_right = 115.0
+offset_bottom = 108.0
+scale = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1685845879]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="title" type="Label" parent="Panel/VBoxContainer" unique_id=60454095]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "INVENTORY"
+
+[node name="GridContainer" type="GridContainer" parent="Panel/VBoxContainer" unique_id=382600740]
+layout_mode = 2
+columns = 4

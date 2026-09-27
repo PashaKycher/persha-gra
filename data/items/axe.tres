@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ToolData" format=3 uid="uid://ceby58mcrf048"]
+
+[ext_resource type="Script" uid="uid://wfsgvgajk56a" path="res://scripts/items/tool_data.gd" id="1_e8x3d"]
+
+[resource]
+script = ExtResource("1_e8x3d")
+id = "axe"
+display_name = "Сокира"
+metadata/_custom_type_script = "uid://wfsgvgajk56a"

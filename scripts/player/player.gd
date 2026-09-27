@@ -1,6 +1,19 @@
 extends CharacterBody2D
 
+
 @export var speed: float = 150.0
+@export var max_energy: int = 100
+@export var has_axe: bool = true
+
+var energy: int = 100
+
+
+@onready var interaction_detector: Area2D = $InteractionDetector
+@onready var inventory: Inventory = $Inventory
+
+
+func _ready() -> void:
+	energy = max_energy
 
 
 func _physics_process(_delta: float) -> void:
@@ -14,3 +27,27 @@ func _physics_process(_delta: float) -> void:
 	velocity = direction * speed
 
 	move_and_slide()
+
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("interact"):
+		interact()
+
+
+func interact() -> void:
+	var target = interaction_detector.get_interactable()
+
+	if target:
+		target.interact()
+
+
+func spend_energy(amount: int) -> bool:
+	if energy < amount:
+		print("Недостатньо енергії.")
+		return false
+
+	energy -= amount
+
+	print("Енергія: ", energy, "/", max_energy)
+
+	return true

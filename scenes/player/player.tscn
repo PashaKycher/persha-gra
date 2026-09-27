@@ -2,22 +2,36 @@
 
 [ext_resource type="Script" uid="uid://bhup8swbb2bex" path="res://scripts/player/player.gd" id="1_dovo2"]
 [ext_resource type="Texture2D" uid="uid://bsoxkgg7qc1e3" path="res://icon.svg" id="2_gmlin"]
+[ext_resource type="Script" uid="uid://cnom85oe7yl5f" path="res://scripts/player/interaction_detector.gd" id="3_gmlin"]
+[ext_resource type="PackedScene" uid="uid://b7jdw2eeypirc" path="res://ui/inventory/inventory.tscn" id="4_lvxji"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6strp"]
-size = Vector2(18, 26)
+size = Vector2(20, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_joqdt"]
+size = Vector2(28, 20)
 
 [node name="Player" type="CharacterBody2D" unique_id=934836812 groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_dovo2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1363193596]
-
-[node name="Icon" type="Sprite2D" parent="." unique_id=981935952]
-position = Vector2(0, 1)
-scale = Vector2(0.15625, 0.2734375)
+scale = Vector2(0.1640625, 0.20312499)
 texture = ExtResource("2_gmlin")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1598778893]
 shape = SubResource("RectangleShape2D_6strp")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1373531213]
+
+[node name="InteractionDetector" type="Area2D" parent="." unique_id=2105802734]
+script = ExtResource("3_gmlin")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionDetector" unique_id=379175462]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_joqdt")
+
+[node name="Inventory" parent="." unique_id=1488999758 instance=ExtResource("4_lvxji")]
+
+[connection signal="body_entered" from="InteractionDetector" to="InteractionDetector" method="_on_body_entered"]
+[connection signal="body_exited" from="InteractionDetector" to="InteractionDetector" method="_on_body_exited"]

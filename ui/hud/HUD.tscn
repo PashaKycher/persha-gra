@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://xcgqladigf1u"]
+
+[ext_resource type="Script" uid="uid://dlykw66eq5tm6" path="res://scripts/ui/hud.gd" id="1_wbxbo"]
+
+[node name="Hud" type="CanvasLayer" unique_id=1032515059]
+script = ExtResource("1_wbxbo")
+
+[node name="HUDPanel" type="PanelContainer" parent="." unique_id=2093535538]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 158.0
+offset_bottom = 89.0
+scale = Vector2(0.3, 0.3)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUDPanel" unique_id=1170864796]
+layout_mode = 2
+
+[node name="EnergyLabel" type="Label" parent="HUDPanel/VBoxContainer" unique_id=329931971]
+custom_minimum_size = Vector2(1, 1)
+custom_maximum_size = Vector2(20, -1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "ENERGY"
+
+[node name="EnergyBar" type="ProgressBar" parent="HUDPanel/VBoxContainer" unique_id=1326144218]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+value = 100.0
+
+[node name="WoodLabel" type="Label" parent="HUDPanel/VBoxContainer" unique_id=640345729]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
