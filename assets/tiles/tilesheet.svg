@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="16" viewBox="0 0 96 16">
+    <!-- Grass -->
+    <rect x="0" y="0" width="16" height="16" fill="#556B3F"/>
+
+    <!-- Grass variation -->
+    <rect x="16" y="0" width="16" height="16" fill="#607849"/>
+
+    <!-- Dirt -->
+    <rect x="32" y="0" width="16" height="16" fill="#8A6A48"/>
+
+    <!-- Dirt variation -->
+    <rect x="48" y="0" width="16" height="16" fill="#795A3C"/>
+
+    <!-- Water -->
+    <rect x="64" y="0" width="16" height="16" fill="#405D73"/>
+
+    <!-- Road -->
+    <rect x="80" y="0" width="16" height="16" fill="#A18B68"/>
+</svg>

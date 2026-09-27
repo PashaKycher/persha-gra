@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ec4unnj775df"]
+
+[ext_resource type="Script" uid="uid://bije3m4gbtgff" path="res://scripts/world/tree.gd" id="1_1cpa3"]
+[ext_resource type="Texture2D" uid="uid://dbkserxhef4rt" path="res://assets/objects/tree.svg" id="1_rvqxf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_joqdt"]
+size = Vector2(10, 8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_joqdt"]
+radius = 24.0
+
+[node name="Tree" type="StaticBody2D" unique_id=218222844]
+script = ExtResource("1_1cpa3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=515758990]
+position = Vector2(0, -24)
+texture = ExtResource("1_rvqxf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1592442168]
+shape = SubResource("RectangleShape2D_joqdt")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1873972586]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=730535717]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_joqdt")
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]
