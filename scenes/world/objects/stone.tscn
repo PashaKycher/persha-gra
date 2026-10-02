@@ -8,9 +8,9 @@
 [node name="Stone" type="StaticBody2D" unique_id=722605681]
 script = ExtResource("1_kwihg")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=714173776]
+texture = ExtResource("2_eg8lp")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1135247698]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_mc65e")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=714173776]
-texture = ExtResource("2_eg8lp")

@@ -2,12 +2,10 @@
 
 [ext_resource type="Script" uid="uid://brj1wo3gr4213" path="res://scripts/player/inventory.gd" id="1_t68fq"]
 
-[node name="Inventory" type="Control" unique_id=1488999758]
+[node name="Inventory" type="Control" unique_id=764993060]
+process_mode = 2
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.3, 0.3)
 script = ExtResource("1_t68fq")
 
 [node name="Panel" type="Panel" parent="." unique_id=1689311865]

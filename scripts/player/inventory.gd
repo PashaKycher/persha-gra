@@ -1,13 +1,9 @@
-class_name Inventory
 extends Control
 
 
 @onready var grid: GridContainer = $Panel/VBoxContainer/GridContainer
 
 var player: CharacterBody2D
-
-# Словник для збереження кількості предметів: {"wood": 5, "stone": 2}
-var items: Dictionary = {}
 
 
 func _ready() -> void:
@@ -26,25 +22,47 @@ func _process(_delta: float) -> void:
 func toggle_inventory() -> void:
 	visible = not visible
 
+	if visible:
+		refresh_inventory()
+
+	get_tree().paused = visible
+
 
 func create_slots() -> void:
-	var slot_scene := preload("res://ui/inventory/InventorySlot.tscn")
-	
+	var slot_scene = preload("res://ui/inventory/InventorySlot.tscn")
+
 	for i in range(12):
-		var slot := slot_scene.instantiate()
+		var slot = slot_scene.instantiate()
+
 		grid.add_child(slot)
 
 
-# Функція, яку викликає HUD для відображення кількості ресурсів
-func get_amount(item_name: String) -> int:
-	if items.has(item_name):
-		return items[item_name]
-	return 0
+func refresh_inventory() -> void:
+	var slots := grid.get_children()
+	var inventory_items: Dictionary = player.inventory.items
 
+	var index := 0
 
-# Функція для додавання предметів в інвентар (знадобиться далі за туторіалом)
-func add_item(item_name: String, amount: int = 1) -> void:
-	if items.has(item_name):
-		items[item_name] += amount
-	else:
-		items[item_name] = amount
+	for item_id in inventory_items:
+		if index >= slots.size():
+			break
+
+		var amount: int = inventory_items[item_id]
+
+		if amount <= 0:
+			continue
+
+		var item: ItemData = ItemDatabase.get_item(item_id)
+
+		if item == null:
+			continue
+
+		slots[index].set_item(
+			item,
+			amount
+		)
+
+		index += 1
+
+	for i in range(index, slots.size()):
+		slots[i].clear_slot()
