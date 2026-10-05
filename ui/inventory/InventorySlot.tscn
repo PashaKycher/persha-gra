@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cnedjavny14ca"]
 
 [ext_resource type="Script" uid="uid://cy2dj0828on7p" path="res://scripts/ui/inventory_slot.gd" id="1_8lvgp"]
-[ext_resource type="Texture2D" uid="uid://cguvlnf43evwm" path="res://assets/icons/items/wood.svg" id="2_jffjn"]
+[ext_resource type="Texture2D" uid="uid://buxqm3fha47wq" path="res://assets/icons/items/wood.svg" id="2_jffjn"]
 
 [node name="InventorySlot" type="Control" unique_id=427659860]
 custom_minimum_size = Vector2(32, 32)

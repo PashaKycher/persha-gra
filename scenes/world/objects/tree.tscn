@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ec4unnj775df"]
 
-[ext_resource type="Script" uid="uid://bije3m4gbtgff" path="res://scripts/world/tree.gd" id="1_1cpa3"]
+[ext_resource type="Script" uid="uid://dot7lrj1gmqy3" path="res://scripts/world/resource_node.gd" id="1_q6b82"]
 [ext_resource type="Texture2D" uid="uid://dbkserxhef4rt" path="res://assets/objects/tree.svg" id="1_rvqxf"]
 [ext_resource type="Resource" uid="uid://co6ebenfso221" path="res://data/items/wood.tres" id="2_q6b82"]
 
@@ -8,8 +8,11 @@
 size = Vector2(10, 8)
 
 [node name="Tree" type="StaticBody2D" unique_id=218222844]
-script = ExtResource("1_1cpa3")
-wood_item = ExtResource("2_q6b82")
+script = ExtResource("1_q6b82")
+required_tool_id = "axe"
+resource_item = ExtResource("2_q6b82")
+resource_amount = 2
+hits_required = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=515758990]
 position = Vector2(0, -24)

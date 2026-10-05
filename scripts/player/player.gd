@@ -5,6 +5,9 @@ extends CharacterBody2D
 @export var max_energy: int = 100
 @export var has_axe: bool = true
 
+@export var has_pickaxe: bool = true
+@export var has_hand: bool = true
+
 var energy: int = 100
 
 

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cry6v0nmwd523"]
+
+[ext_resource type="Texture2D" uid="uid://bac4s2ik54spm" path="res://assets/icons/items/branch.svg" id="1_1ose2"]
+[ext_resource type="Script" uid="uid://dipuet8c4utmg" path="res://scripts/items/item_data.gd" id="1_ahxnd"]
+
+[resource]
+script = ExtResource("1_ahxnd")
+id = "branch"
+display_name = "Гілка"
+max_stack = 50
+icon = ExtResource("1_1ose2")
+metadata/_custom_type_script = "uid://dipuet8c4utmg"

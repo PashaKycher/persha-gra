@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buxqm3fha47wq"
-path="res://.godot/imported/wood.svg-be69ef1ee291a7bcb066e9bc697b33a6.ctex"
+uid="uid://cgcfj8urs3f1"
+path="res://.godot/imported/stone.svg-748eface10d7977813f323de6cc57490.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/items/wood.svg"
-dest_files=["res://.godot/imported/wood.svg-be69ef1ee291a7bcb066e9bc697b33a6.ctex"]
+source_file="res://assets/icons/items/stone.svg"
+dest_files=["res://.godot/imported/stone.svg-748eface10d7977813f323de6cc57490.ctex"]
 
 [params]
 

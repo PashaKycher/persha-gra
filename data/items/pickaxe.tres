@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ToolData" format=3 uid="uid://bkkk8nwnbow7d"]
+
+[ext_resource type="Script" uid="uid://wfsgvgajk56a" path="res://scripts/items/tool_data.gd" id="1_0smob"]
+
+[resource]
+script = ExtResource("1_0smob")
+id = "pickaxe"
+display_name = "Кірка"
+metadata/_custom_type_script = "uid://wfsgvgajk56a"

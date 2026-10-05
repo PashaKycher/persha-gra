@@ -1,12 +1,18 @@
 [gd_scene format=3 uid="uid://c8o3yoq1v0o04"]
 
-[ext_resource type="Script" uid="uid://brqve2c22f6ip" path="res://scripts/world/stone.gd" id="1_kwihg"]
+[ext_resource type="Script" uid="uid://dot7lrj1gmqy3" path="res://scripts/world/resource_node.gd" id="1_eg8lp"]
 [ext_resource type="Texture2D" uid="uid://bjcxf4uj88jfu" path="res://assets/objects/stone.svg" id="2_eg8lp"]
+[ext_resource type="Resource" uid="uid://b0yp3nshcyd23" path="res://data/items/stone.tres" id="2_mc65e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mc65e"]
 
-[node name="Stone" type="StaticBody2D" unique_id=722605681]
-script = ExtResource("1_kwihg")
+[node name="Stone" type="StaticBody2D" unique_id=1208935418]
+script = ExtResource("1_eg8lp")
+required_tool_id = "pickaxe"
+resource_item = ExtResource("2_mc65e")
+resource_amount = 3
+hits_required = 4
+metadata/_custom_type_script = "uid://dot7lrj1gmqy3"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=714173776]
 texture = ExtResource("2_eg8lp")

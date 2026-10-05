@@ -1,0 +1,21 @@
+<svg xmlns="http://w3.org" width="16" height="16" viewBox="0 0 16 16" style="image-rendering: pixelated; transform: scale(1);">
+  <!-- Основной фон (темная кора) -->
+  <rect width="16" height="16" fill="#2d1b13"/>
+  
+  <!-- Рисунок волокон (средний коричневый) -->
+  <rect x="1" y="0" width="2" height="16" fill="#422a1d"/>
+  <rect x="7" y="0" width="2" height="6" fill="#422a1d"/>
+  <rect x="7" y="10" width="2" height="6" fill="#422a1d"/>
+  <rect x="13" y="2" width="2" height="12" fill="#422a1d"/>
+  
+  <!-- Блики коры (светло-коричневый) -->
+  <rect x="3" y="0" width="1" height="16" fill="#5c3e2b"/>
+  <rect x="9" y="2" width="1" height="3" fill="#5c3e2b"/>
+  <rect x="9" y="12" width="1" height="3" fill="#5c3e2b"/>
+  <rect x="15" y="4" width="1" height="8" fill="#5c3e2b"/>
+  
+  <!-- Глубокие тени / трещины (черно-коричневый) -->
+  <rect x="5" y="0" width="1" height="8" fill="#1b0f0a"/>
+  <rect x="5" y="11" width="1" height="5" fill="#1b0f0a"/>
+  <rect x="11" y="1" width="1" height="14" fill="#1b0f0a"/>
+</svg>

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cihuwxe1la73g"]
+
+[ext_resource type="Script" uid="uid://dot7lrj1gmqy3" path="res://scripts/world/resource_node.gd" id="1_pxylb"]
+[ext_resource type="Resource" uid="uid://cry6v0nmwd523" path="res://data/items/branch.tres" id="2_acidw"]
+[ext_resource type="Texture2D" uid="uid://busq1vpx2gyp0" path="res://assets/objects/branch_textura.svg" id="3_yojqm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_joqdt"]
+
+[node name="Branch" type="StaticBody2D" unique_id=1720985940]
+script = ExtResource("1_pxylb")
+required_tool_id = "hand"
+resource_item = ExtResource("2_acidw")
+energy_cost = 0
+metadata/_custom_type_script = "uid://dot7lrj1gmqy3"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1089982197]
+texture = ExtResource("3_yojqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=536576302]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_joqdt")

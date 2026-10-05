@@ -1,0 +1,26 @@
+<svg xmlns="http://w3.org" width="16" height="16" viewBox="0 0 16 16" style="image-rendering: pixelated;">
+  <!-- Фон серой ячейки инвентаря -->
+  <rect x="0" y="0" width="16" height="16" fill="#1a1a24"/>
+  <!-- Внутренняя темная рамка ячейки -->
+  <rect x="1" y="1" width="14" height="14" fill="#111116"/>
+  <rect x="2" y="2" width="12" height="12" fill="#1a1a24"/>
+
+  <!-- ВЕТКА (Попиксельная сборка) -->
+  <!-- Черный контур ветки -->
+  <rect x="3" y="11" width="3" height="3" fill="#000000"/>
+  <rect x="5" y="9" width="3" height="3" fill="#000000"/>
+  <rect x="7" y="7" width="3" height="3" fill="#000000"/>
+  <rect x="9" y="5" width="3" height="3" fill="#000000"/>
+  <rect x="11" y="3" width="3" height="3" fill="#000000"/>
+  <!-- Боковой сучок контур -->
+  <rect x="8" y="10" width="2" height="2" fill="#000000"/>
+  <rect x="9" y="9" width="2" height="2" fill="#000000"/>
+
+  <!-- Сердцевина ветки (Коричневый) -->
+  <path d="M4,12 h1 v-1 h1 v-1 h1 v-1 h1 v-1 h1 v-1 h1 v-1 h1 v1 h-1 v1 h-1 v1 h-1 v1 h-1 v1 h-1 v1 z" fill="#4a2f1b"/>
+  <!-- Сучок (Коричневый) -->
+  <rect x="9" y="10" width="1" height="1" fill="#4a2f1b"/>
+
+  <!-- Кора сверху / Блик (Светло-коричневый) -->
+  <path d="M4,11 h1 v-1 h1 v-1 h1 v-1 h1 v-1 h1 v-1 h1 v1 h-1 v1 h-1 v1 h-1 v1 h-1 v1 h-1 v1 z" fill="#784e2f"/>
+</svg>

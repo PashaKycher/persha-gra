@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buxqm3fha47wq"
-path="res://.godot/imported/wood.svg-be69ef1ee291a7bcb066e9bc697b33a6.ctex"
+uid="uid://busq1vpx2gyp0"
+path="res://.godot/imported/branch_textura.svg-5037c96f09e4d028195c81605e837939.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/items/wood.svg"
-dest_files=["res://.godot/imported/wood.svg-be69ef1ee291a7bcb066e9bc697b33a6.ctex"]
+source_file="res://assets/objects/branch_textura.svg"
+dest_files=["res://.godot/imported/branch_textura.svg-5037c96f09e4d028195c81605e837939.ctex"]
 
 [params]
 

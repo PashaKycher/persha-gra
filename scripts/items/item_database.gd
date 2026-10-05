@@ -7,6 +7,8 @@ var items: Dictionary = {}
 
 func _ready() -> void:
 	register_item(preload("res://data/items/wood.tres"))
+	register_item(preload("res://data/items/stone.tres"))
+	register_item(preload("res://data/items/branch.tres"))
 
 
 func register_item(item: ItemData) -> void:
