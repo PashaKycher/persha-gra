@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://d3k58glaudxsv"]
+
+[ext_resource type="Script" uid="uid://dipuet8c4utmg" path="res://scripts/items/item_data.gd" id="1_bny6i"]
+[ext_resource type="Script" uid="uid://bcswiue0mknmm" path="res://scripts/crafting/recipe_data.gd" id="2_7ubes"]
+[ext_resource type="Resource" uid="uid://cry6v0nmwd523" path="res://data/items/branch.tres" id="2_8hj4h"]
+[ext_resource type="Resource" uid="uid://b0yp3nshcyd23" path="res://data/items/stone.tres" id="3_qegx3"]
+[ext_resource type="Resource" uid="uid://dh71uh333tkuy" path="res://data/items/stone_knife.tres" id="4_su5u4"]
+
+[resource]
+script = ExtResource("2_7ubes")
+result_item = ExtResource("4_su5u4")
+ingredients = Array[ExtResource("1_bny6i")]([ExtResource("2_8hj4h"), ExtResource("3_qegx3")])
+ingredient_amounts = Array[int]([2, 3])
+metadata/_custom_type_script = "uid://bcswiue0mknmm"

@@ -1,21 +1,17 @@
-<svg xmlns="http://w3.org" width="16" height="16" viewBox="0 0 16 16" style="image-rendering: pixelated; transform: scale(1);">
-  <!-- Основной фон (темная кора) -->
-  <rect width="16" height="16" fill="#2d1b13"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="16" height="16">
+  <!-- Основна вигнута гілка -->
+  <path d="M 10 54 C 22 44, 32 28, 52 12" fill="none" stroke="#8B5A2B" stroke-width="6" stroke-linecap="round"/>
   
-  <!-- Рисунок волокон (средний коричневый) -->
-  <rect x="1" y="0" width="2" height="16" fill="#422a1d"/>
-  <rect x="7" y="0" width="2" height="6" fill="#422a1d"/>
-  <rect x="7" y="10" width="2" height="6" fill="#422a1d"/>
-  <rect x="13" y="2" width="2" height="12" fill="#422a1d"/>
+  <!-- Блік/світла частина кори -->
+  <path d="M 11 53 C 22 43, 31 28, 50 13" fill="none" stroke="#A6703B" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Відгалуження 1 -->
+  <path d="M 30 34 C 38 26, 44 24, 48 20" fill="none" stroke="#8B5A2B" stroke-width="4" stroke-linecap="round"/>
   
-  <!-- Блики коры (светло-коричневый) -->
-  <rect x="3" y="0" width="1" height="16" fill="#5c3e2b"/>
-  <rect x="9" y="2" width="1" height="3" fill="#5c3e2b"/>
-  <rect x="9" y="12" width="1" height="3" fill="#5c3e2b"/>
-  <rect x="15" y="4" width="1" height="8" fill="#5c3e2b"/>
-  
-  <!-- Глубокие тени / трещины (черно-коричневый) -->
-  <rect x="5" y="0" width="1" height="8" fill="#1b0f0a"/>
-  <rect x="5" y="11" width="1" height="5" fill="#1b0f0a"/>
-  <rect x="11" y="1" width="1" height="14" fill="#1b0f0a"/>
+  <!-- Відгалуження 2 -->
+  <path d="M 20 44 C 18 36, 14 32, 10 28" fill="none" stroke="#8B5A2B" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Листочки на кінцях -->
+  <path d="M 48 18 C 42 12, 52 10, 54 16 Z" fill="#6B9933"/>
+  <path d="M 10 28 C 6 22, 14 20, 14 26 Z" fill="#6B9933"/>
 </svg>

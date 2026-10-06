@@ -13,14 +13,12 @@ func _ready() -> void:
 
 	create_slots()
 
-
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_inventory"):
-		toggle_inventory()
+		visible = not visible
 
-
-func toggle_inventory() -> void:
-	visible = not visible
+	if Input.is_key_pressed(KEY_ESCAPE):
+		visible = false
 
 	if visible:
 		refresh_inventory()
@@ -31,7 +29,7 @@ func toggle_inventory() -> void:
 func create_slots() -> void:
 	var slot_scene = preload("res://ui/inventory/InventorySlot.tscn")
 
-	for i in range(12):
+	for i in range(36):
 		var slot = slot_scene.instantiate()
 
 		grid.add_child(slot)

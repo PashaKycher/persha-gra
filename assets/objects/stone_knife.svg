@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32">
+  <!-- Дерев'яна ручка -->
+  <path d="M 12 52 L 24 40 L 30 46 L 18 58 Z" fill="#8B5A2B"/>
+  
+  <!-- Мотузка (креплення) -->
+  <path d="M 21 43 L 27 49 M 23 41 L 29 47 M 25 39 L 31 45" stroke="#DAA520" stroke-width="2.5"/>
+  
+  <!-- Основне кам'яне лезо -->
+  <polygon points="26,42 48,12 56,15 52,30 32,48" fill="#6C7574"/>
+  
+  <!-- Світла грань сколу -->
+  <polygon points="26,42 48,12 42,28 32,40" fill="#9CA6A5"/>
+  
+  <!-- Тіньова частина -->
+  <polygon points="42,28 56,15 52,30 32,40" fill="#4B5251"/>
+  
+  <!-- Лінії тріщин та сколів -->
+  <path d="M 36 22 L 40 28 L 34 34" fill="none" stroke="#333837" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

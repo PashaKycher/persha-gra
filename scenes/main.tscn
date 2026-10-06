@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ec4unnj775df" path="res://scenes/world/objects/tree.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://c8o3yoq1v0o04" path="res://scenes/world/objects/stone.tscn" id="3_tefeu"]
 [ext_resource type="PackedScene" uid="uid://xcgqladigf1u" path="res://ui/hud/HUD.tscn" id="6_tefeu"]
+[ext_resource type="Script" uid="uid://dwj1tu0bctvmr" path="res://scripts/crafting/crafting_ui.gd" id="8_tipki"]
 
 [sub_resource type="GDScript" id="GDScript_tefeu"]
 script/source = "extends Node2D
@@ -70,22 +71,88 @@ shape = SubResource("RectangleShape2D_sugp2")
 [node name="Branch" parent="World" unique_id=1720985940 instance=ExtResource("2_o6xl0")]
 position = Vector2(550, 250)
 
+[node name="Branch2" parent="World" unique_id=1865749077 instance=ExtResource("2_o6xl0")]
+position = Vector2(467, 241)
+
+[node name="Branch3" parent="World" unique_id=1256167795 instance=ExtResource("2_o6xl0")]
+position = Vector2(506, 241)
+
+[node name="Branch4" parent="World" unique_id=1001680617 instance=ExtResource("2_o6xl0")]
+position = Vector2(575, 267)
+
+[node name="Branch5" parent="World" unique_id=1441114727 instance=ExtResource("2_o6xl0")]
+position = Vector2(545, 292)
+
 [node name="Tree" parent="World" unique_id=218222844 instance=ExtResource("2_sugp2")]
 position = Vector2(500, 200)
 
+[node name="Tree2" parent="World" unique_id=1692004292 instance=ExtResource("2_sugp2")]
+position = Vector2(550, 205)
+
 [node name="Stone" parent="World" unique_id=722605681 instance=ExtResource("3_tefeu")]
 position = Vector2(450, 350)
+
+[node name="Stone2" parent="World" unique_id=1208935418 instance=ExtResource("3_tefeu")]
+position = Vector2(406, 351)
 
 [node name="Player" parent="." unique_id=934836812 instance=ExtResource("1_o5qli")]
 z_index = 10
 position = Vector2(500, 300)
 
-[node name="InventoryUI" parent="Player" unique_id=764993060 instance=ExtResource("1_o6xl0")]
+[node name="Hud" parent="." unique_id=1032515059 instance=ExtResource("6_tefeu")]
+
+[node name="InventoryUI" parent="Hud" unique_id=764993060 instance=ExtResource("1_o6xl0")]
 process_mode = 3
-offset_left = -120.0
-offset_top = -60.0
-offset_right = -120.0
-offset_bottom = -60.0
+offset_left = 10.0
+offset_top = 34.0
+offset_right = 10.0
+offset_bottom = 34.0
 mouse_filter = 2
 
-[node name="Hud" parent="." unique_id=1032515059 instance=ExtResource("6_tefeu")]
+[node name="CraftingUI" type="Panel" parent="Hud" unique_id=1830975720]
+offset_left = 260.0
+offset_top = 34.0
+offset_right = 660.0
+offset_bottom = 504.0
+scale = Vector2(0.28, 0.28)
+script = ExtResource("8_tipki")
+
+[node name="Title" type="Label" parent="Hud/CraftingUI" unique_id=118698963]
+layout_mode = 0
+offset_left = 19.999998
+offset_right = 70.0
+offset_bottom = 23.000002
+text = "Крафт"
+
+[node name="RecipeList" type="PanelContainer" parent="Hud/CraftingUI" unique_id=333669604]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 25.000004
+offset_right = 170.0
+offset_bottom = 245.0
+
+[node name="RecipeButtons" type="VBoxContainer" parent="Hud/CraftingUI/RecipeList" unique_id=325053399]
+layout_mode = 2
+
+[node name="RecipeDetails" type="PanelContainer" parent="Hud/CraftingUI" unique_id=796925670]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 25.000004
+offset_right = 390.0
+offset_bottom = 267.0
+
+[node name="DetailsContent" type="VBoxContainer" parent="Hud/CraftingUI/RecipeDetails" unique_id=2043506876]
+layout_mode = 2
+
+[node name="RecipeName" type="Label" parent="Hud/CraftingUI/RecipeDetails/DetailsContent" unique_id=1432266224]
+layout_mode = 2
+
+[node name="Ingredients" type="Label" parent="Hud/CraftingUI/RecipeDetails/DetailsContent" unique_id=2030779307]
+layout_mode = 2
+
+[node name="Result" type="Label" parent="Hud/CraftingUI/RecipeDetails/DetailsContent" unique_id=968716143]
+layout_mode = 2
+
+[node name="CraftButton" type="Button" parent="Hud/CraftingUI/RecipeDetails/DetailsContent" unique_id=1167864604]
+layout_mode = 2
+text = "СТВОРИТИ"

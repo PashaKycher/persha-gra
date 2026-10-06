@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by7hpm3ppppa0"
-path="res://.godot/imported/branch_textura.svg-5037c96f09e4d028195c81605e837939.ctex"
+uid="uid://dmj015h8w7neh"
+path="res://.godot/imported/stone_knife.svg-0caa6a69bbace711fcaf40ddea6d6257.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/objects/branch_textura.svg"
-dest_files=["res://.godot/imported/branch_textura.svg-5037c96f09e4d028195c81605e837939.ctex"]
+source_file="res://assets/objects/stone_knife.svg"
+dest_files=["res://.godot/imported/stone_knife.svg-0caa6a69bbace711fcaf40ddea6d6257.ctex"]
 
 [params]
 

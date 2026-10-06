@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cnedjavny14ca"]
 
 [ext_resource type="Script" uid="uid://cy2dj0828on7p" path="res://scripts/ui/inventory_slot.gd" id="1_8lvgp"]
-[ext_resource type="Texture2D" uid="uid://buxqm3fha47wq" path="res://assets/icons/items/wood.svg" id="2_jffjn"]
 
 [node name="InventorySlot" type="Control" unique_id=427659860]
 custom_minimum_size = Vector2(32, 32)
@@ -20,7 +19,6 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("2_jffjn")
 stretch_mode = 5
 
 [node name="AmountLabel" type="Label" parent="." unique_id=955045312]

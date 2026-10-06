@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bhup8swbb2bex" path="res://scripts/player/player.gd" id="1_dovo2"]
 [ext_resource type="Texture2D" uid="uid://bsoxkgg7qc1e3" path="res://icon.svg" id="2_gmlin"]
 [ext_resource type="Script" uid="uid://cnom85oe7yl5f" path="res://scripts/player/interaction_detector.gd" id="3_gmlin"]
+[ext_resource type="Script" uid="uid://dh3ed856dm1nb" path="res://scripts/crafting/crafting_system.gd" id="5_75vfm"]
 [ext_resource type="Script" uid="uid://bi0stuyfeasd7" path="res://scripts/player/inventory_data.gd" id="5_p47bc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6strp"]
@@ -33,6 +34,9 @@ shape = SubResource("RectangleShape2D_joqdt")
 
 [node name="Inventory" type="Node" parent="." unique_id=1326628580]
 script = ExtResource("5_p47bc")
+
+[node name="CraftingSystem" type="Node" parent="." unique_id=186664837]
+script = ExtResource("5_75vfm")
 
 [connection signal="body_entered" from="InteractionDetector" to="InteractionDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="InteractionDetector" to="InteractionDetector" method="_on_body_exited"]

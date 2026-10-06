@@ -1,26 +1,15 @@
-<svg xmlns="http://w3.org" width="16" height="16" viewBox="0 0 16 16" style="image-rendering: pixelated;">
-  <!-- Фон серой ячейки инвентаря -->
-  <rect x="0" y="0" width="16" height="16" fill="#1a1a24"/>
-  <!-- Внутренняя темная рамка ячейки -->
-  <rect x="1" y="1" width="14" height="14" fill="#111116"/>
-  <rect x="2" y="2" width="12" height="12" fill="#1a1a24"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="16" height="16">
+  <!-- Тінь/Контур основної гілки -->
+  <path d="M 12 52 C 22 42, 34 26, 52 12" fill="none" stroke="#3B230D" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Основне тіло гілки -->
+  <path d="M 12 52 C 22 42, 34 26, 52 12" fill="none" stroke="#7A4B1B" stroke-width="5" stroke-linecap="round"/>
+  
+  <!-- Бічне відгалуження (пагін) -->
+  <path d="M 32 32 C 38 24, 46 22, 50 18" fill="none" stroke="#3B230D" stroke-width="5" stroke-linecap="round"/>
+  <path d="M 32 32 C 38 24, 46 22, 50 18" fill="none" stroke="#7A4B1B" stroke-width="3" stroke-linecap="round"/>
 
-  <!-- ВЕТКА (Попиксельная сборка) -->
-  <!-- Черный контур ветки -->
-  <rect x="3" y="11" width="3" height="3" fill="#000000"/>
-  <rect x="5" y="9" width="3" height="3" fill="#000000"/>
-  <rect x="7" y="7" width="3" height="3" fill="#000000"/>
-  <rect x="9" y="5" width="3" height="3" fill="#000000"/>
-  <rect x="11" y="3" width="3" height="3" fill="#000000"/>
-  <!-- Боковой сучок контур -->
-  <rect x="8" y="10" width="2" height="2" fill="#000000"/>
-  <rect x="9" y="9" width="2" height="2" fill="#000000"/>
-
-  <!-- Сердцевина ветки (Коричневый) -->
-  <path d="M4,12 h1 v-1 h1 v-1 h1 v-1 h1 v-1 h1 v-1 h1 v-1 h1 v1 h-1 v1 h-1 v1 h-1 v1 h-1 v1 h-1 v1 z" fill="#4a2f1b"/>
-  <!-- Сучок (Коричневый) -->
-  <rect x="9" y="10" width="1" height="1" fill="#4a2f1b"/>
-
-  <!-- Кора сверху / Блик (Светло-коричневый) -->
-  <path d="M4,11 h1 v-1 h1 v-1 h1 v-1 h1 v-1 h1 v-1 h1 v1 h-1 v1 h-1 v1 h-1 v1 h-1 v1 h-1 v1 z" fill="#784e2f"/>
+  <!-- Маленькі зелені листочки -->
+  <path d="M 48 16 C 44 10, 52 8, 54 14 C 52 18, 48 16, 48 16 Z" fill="#557A2B" stroke="#2D4214" stroke-width="1.5"/>
+  <path d="M 36 26 C 32 22, 38 18, 41 22 C 40 26, 36 26, 36 26 Z" fill="#6B9933" stroke="#2D4214" stroke-width="1.5"/>
 </svg>

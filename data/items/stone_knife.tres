@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dh71uh333tkuy"]
+
+[ext_resource type="Script" uid="uid://dipuet8c4utmg" path="res://scripts/items/item_data.gd" id="1_5dudw"]
+[ext_resource type="Texture2D" uid="uid://b28sogr1b8usw" path="res://assets/icons/stone_knife_icon.svg" id="1_ce63n"]
+
+[resource]
+script = ExtResource("1_5dudw")
+id = "stone_knife"
+display_name = "Кам'яний ніж"
+max_stack = 1
+icon = ExtResource("1_ce63n")
+metadata/_custom_type_script = "uid://dipuet8c4utmg"

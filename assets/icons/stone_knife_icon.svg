@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32">
+  <!-- Мотузка / Обмотка ручки -->
+  <path d="M 16 46 L 22 52 M 20 42 L 26 48 M 24 38 L 30 44" stroke="#C2A649" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Дерев'яна рукоятка -->
+  <path d="M 12 52 L 22 42 L 28 48 L 18 58 Z" fill="#6E4723" stroke="#3B230D" stroke-width="2" stroke-linejoin="round"/>
+  
+  <!-- Кам'яне лезо -->
+  <polygon points="26,42 46,14 54,16 52,28 32,48" fill="#788280" stroke="#2D3332" stroke-width="2" stroke-linejoin="round"/>
+  
+  <!-- Грань/Блік леза (ефект обколотого каменю) -->
+  <polygon points="26,42 46,14 42,28 32,40" fill="#A1ABAA"/>
+  
+  <!-- Зазубрини / Текстура сколу -->
+  <path d="M 46 14 L 38 24 L 42 28 L 32 38" fill="none" stroke="#2D3332" stroke-width="1.5" stroke-linejoin="round"/>
+</svg>

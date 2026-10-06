@@ -6,10 +6,10 @@
 script = ExtResource("1_wbxbo")
 
 [node name="HUDPanel" type="PanelContainer" parent="." unique_id=2093535538]
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 158.0
-offset_bottom = 89.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 160.0
+offset_bottom = 91.0
 scale = Vector2(0.3, 0.3)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HUDPanel" unique_id=1170864796]
