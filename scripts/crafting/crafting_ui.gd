@@ -2,14 +2,15 @@ extends Panel
 
 
 @onready var recipe_buttons: VBoxContainer = $RecipeList/RecipeButtons
-
+@onready var craft_feedback: Label = $CraftFeedback
 @onready var recipe_name: Label = $RecipeDetails/DetailsContent/RecipeName
 @onready var ingredients: Label = $RecipeDetails/DetailsContent/Ingredients
 @onready var result: Label = $RecipeDetails/DetailsContent/Result
 @onready var craft_button: Button = $RecipeDetails/DetailsContent/CraftButton
-
+@onready var feedback_timer: Timer = $Timer
 @onready var inventory: Inventory = get_tree().current_scene.get_node("Player/Inventory")
 @onready var crafting_system: CraftingSystem = get_tree().current_scene.get_node("Player/CraftingSystem")
+@onready var inventory_ui: Control = $"../InventoryUI"
 
 var selected_recipe: RecipeData
 
@@ -18,6 +19,8 @@ func _ready() -> void:
 	visible = false
 	update_recipe_list()
 	craft_button.pressed.connect(_on_craft_pressed)
+	craft_feedback.text = ""
+	feedback_timer.timeout.connect(_on_feedback_timer_timeout)
 
 func _on_craft_pressed() -> void:
 	if selected_recipe == null:
@@ -25,7 +28,13 @@ func _on_craft_pressed() -> void:
 
 	if crafting_system.craft(selected_recipe, inventory):
 		update_recipe_details()
+		inventory_ui.refresh_inventory()
 
+		craft_feedback.text = "Створено: %s ×%d" % [
+			selected_recipe.result_item.display_name,
+			selected_recipe.result_amount
+		]
+		feedback_timer.start()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("open_crafting"):
@@ -77,3 +86,6 @@ func update_recipe_details() -> void:
 		selected_recipe,
 		inventory
 	)
+
+func _on_feedback_timer_timeout() -> void:
+	craft_feedback.text = ""

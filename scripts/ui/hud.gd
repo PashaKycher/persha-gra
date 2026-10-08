@@ -3,7 +3,7 @@ extends CanvasLayer
 
 @onready var energy_bar: ProgressBar = $HUDPanel/VBoxContainer/EnergyBar
 @onready var energy_label: Label = $HUDPanel/VBoxContainer/EnergyLabel
-@onready var wood_label: Label = $HUDPanel/VBoxContainer/WoodLabel
+#@onready var wood_label: Label = $HUDPanel/VBoxContainer/WoodLabel
 
 
 var player: CharacterBody2D
@@ -34,4 +34,4 @@ func update_energy() -> void:
 func update_inventory() -> void:
 	var wood_amount = player.inventory.get_amount("wood")
 
-	wood_label.text = "Деревина: %d" % wood_amount
+	#wood_label.text = "Деревина: %d" % wood_amount

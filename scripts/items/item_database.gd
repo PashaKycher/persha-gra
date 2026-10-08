@@ -10,6 +10,7 @@ func _ready() -> void:
 	register_item(preload("res://data/items/stone.tres"))
 	register_item(preload("res://data/items/branch.tres"))
 	register_item(preload("res://data/items/stone_knife.tres"))
+	register_item(preload("res://data/items/stone_hammer.tres"))
 
 
 func register_item(item: ItemData) -> void:

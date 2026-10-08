@@ -156,3 +156,16 @@ layout_mode = 2
 [node name="CraftButton" type="Button" parent="Hud/CraftingUI/RecipeDetails/DetailsContent" unique_id=1167864604]
 layout_mode = 2
 text = "СТВОРИТИ"
+
+[node name="CraftFeedback" type="Label" parent="Hud/CraftingUI" unique_id=1946491475]
+layout_mode = 0
+offset_left = -892.8571
+offset_top = -25.0
+offset_right = -852.8571
+offset_bottom = -2.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Timer" type="Timer" parent="Hud/CraftingUI" unique_id=1868875198]
+wait_time = 2.0
+one_shot = true

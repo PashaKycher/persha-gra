@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Дерев'яна рукоятка -->
+  <path d="M 16 52 L 36 28 L 42 34 L 22 58 Z" fill="#8B5A2B"/>
+  <!-- Світлий відблиск на ручці -->
+  <path d="M 18 52 L 37 29" stroke="#A6703B" stroke-width="1.5"/>
+
+  <!-- Мотузка (кріплення) -->
+  <path d="M 32 33 L 38 39 M 34 30 L 40 36" stroke="#DAA520" stroke-width="2.5"/>
+
+  <!-- Кам'яне оголов'я -->
+  <polygon points="26,24 44,8 56,20 38,36" fill="#6C7574"/>
+  
+  <!-- Світла грань -->
+  <polygon points="26,24 44,8 48,12 30,28" fill="#9CA6A5"/>
+  
+  <!-- Тіньова сторона -->
+  <polygon points="38,36 56,20 52,16 34,32" fill="#4B5251"/>
+  
+  <!-- Деталізація сколу -->
+  <path d="M 40 16 L 44 22 L 38 26" fill="none" stroke="#333837" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

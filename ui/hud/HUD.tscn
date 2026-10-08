@@ -26,7 +26,3 @@ text = "ENERGY"
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
 value = 100.0
-
-[node name="WoodLabel" type="Label" parent="HUDPanel/VBoxContainer" unique_id=640345729]
-layout_mode = 2
-theme_override_font_sizes/font_size = 16

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bfvtvpnwk0lhv"]
+
+[ext_resource type="Script" uid="uid://dipuet8c4utmg" path="res://scripts/items/item_data.gd" id="1_3fb6q"]
+[ext_resource type="Texture2D" uid="uid://cxxwlfw16ml7q" path="res://assets/icons/stone_hammer_icon.svg" id="1_m3osf"]
+
+[resource]
+script = ExtResource("1_3fb6q")
+id = "stone_hammer"
+display_name = "Кам'яний молот"
+max_stack = 1
+icon = ExtResource("1_m3osf")
+metadata/_custom_type_script = "uid://dipuet8c4utmg"

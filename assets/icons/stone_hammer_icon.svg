@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="16" height="16">
+  <!-- Дерев'яна рукоятка -->
+  <path d="M 16 52 L 36 28 L 42 34 L 22 58 Z" fill="#6E4723" stroke="#3B230D" stroke-width="2" stroke-linejoin="round"/>
+  
+  <!-- Обмотка мотузкою під обухом -->
+  <path d="M 32 33 L 38 39 M 34 30 L 40 36" stroke="#C2A649" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Основна кам'яна голова молота -->
+  <polygon points="26,24 44,8 56,20 38,36" fill="#788280" stroke="#2D3332" stroke-width="2.5" stroke-linejoin="round"/>
+  
+  <!-- Верхня світла грань (блік/об'єм) -->
+  <polygon points="26,24 44,8 48,12 30,28" fill="#A1ABAA"/>
+  
+  <!-- Бокова скошена частина (ударна поверхня) -->
+  <polygon points="44,8 56,20 52,24 40,12" fill="#5A6260"/>
+  
+  <!-- Тріщини та сколи на камені -->
+  <path d="M 38 18 L 42 24 L 36 28" fill="none" stroke="#2D3332" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
