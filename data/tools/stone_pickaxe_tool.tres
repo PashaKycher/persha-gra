@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ToolData" format=3 uid="uid://c6e1a4kp3p7m2"]
+
+[ext_resource type="Script" uid="uid://wfsgvgajk56a" path="res://scripts/items/tool_data.gd" id="1_py8q4"]
+
+[resource]
+script = ExtResource("1_py8q4")
+id = "stone_pickaxe"
+display_name = "Кам'яна кірка"
+tool_type = &"pickaxe"
+material_id = &"stone"
+metadata/_custom_type_script = "uid://wfsgvgajk56a"

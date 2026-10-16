@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Дерев'яна рукоятка -->
+  <path d="M 18 54 L 46 22 L 50 26 L 22 58 Z" fill="#6E4723" stroke="#3B230D" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Мотузка (кріплення) -->
+  <path d="M 34 34 L 42 42 M 36 32 L 44 40" stroke="#C2A649" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Кам'яне лезо сокири -->
+  <path d="M 36 28 L 52 12 C 58 18, 58 28, 50 34 L 30 34 Z" fill="#788280" stroke="#2D3332" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Світла грань леза -->
+  <path d="M 36 28 L 52 12 C 56 16, 56 24, 48 30 L 30 30 Z" fill="#A1ABAA"/>
+  <!-- Тіньова частина -->
+  <path d="M 48 30 C 54 24, 54 16, 52 12 L 50 34 Z" fill="#5A6260"/>
+</svg>

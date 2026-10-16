@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ToolData" format=3 uid="uid://cq5gg5iajo6vv"]
+
+[ext_resource type="Script" uid="uid://wfsgvgajk56a" path="res://scripts/items/tool_data.gd" id="1_w1mtq"]
+
+[resource]
+script = ExtResource("1_w1mtq")
+id = "stone_knife"
+display_name = "Кам'яний ніж"
+tool_type = &"knife"
+material_id = &"stone"
+metadata/_custom_type_script = "uid://wfsgvgajk56a"

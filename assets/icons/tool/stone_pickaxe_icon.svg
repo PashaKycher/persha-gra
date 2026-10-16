@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Дерев'яна рукоятка -->
+  <path d="M 16 54 L 48 22 L 52 26 L 20 58 Z" fill="#6E4723" stroke="#3B230D" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Мотузка (кріплення) -->
+  <path d="M 36 32 L 42 38" stroke="#C2A649" stroke-width="3" stroke-linecap="round"/>
+  <!-- Кам'яне обухівка-кірка (дугою) -->
+  <path d="M 28 14 C 38 10, 52 16, 58 26 C 52 22, 42 18, 32 24 Z" fill="#788280" stroke="#2D3332" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Загострений бік кірки -->
+  <path d="M 52 16 C 56 20, 58 24, 58 26 C 54 22, 48 20, 44 18 Z" fill="#5A6260"/>
+  <!-- Світла грань -->
+  <path d="M 28 14 C 36 11, 48 16, 52 16 C 44 14, 36 14, 30 20 Z" fill="#A1ABAA"/>
+</svg>

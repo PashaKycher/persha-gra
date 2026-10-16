@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://q4x0264pxaim"]
+
+[ext_resource type="Script" uid="uid://dot7lrj1gmqy3" path="res://scripts/world/resource_node.gd" id="1_thcyh"]
+[ext_resource type="Resource" uid="uid://b5qwpyckm3ron" path="res://data/items/tool/stone_axe.tres" id="2_r4waw"]
+[ext_resource type="Texture2D" uid="uid://dho8pptiehaag" path="res://assets/objects/tool/stone_axe_textura.svg" id="3_64o52"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_joqdt"]
+size = Vector2(50, 50)
+
+[node name="Stone_axe" type="StaticBody2D" unique_id=1720985940]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_thcyh")
+required_tool_id = "hand"
+resource_item = ExtResource("2_r4waw")
+energy_cost = 0
+metadata/_custom_type_script = "uid://dot7lrj1gmqy3"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1089982197]
+texture = ExtResource("3_64o52")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=536576302]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_joqdt")

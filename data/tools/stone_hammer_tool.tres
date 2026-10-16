@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ToolData" format=3 uid="uid://bt4nvuvyu7gbw"]
+
+[ext_resource type="Script" uid="uid://wfsgvgajk56a" path="res://scripts/items/tool_data.gd" id="1_xab6h"]
+
+[resource]
+script = ExtResource("1_xab6h")
+id = "stone_hammer"
+display_name = "Кам'яний молот"
+tool_type = &"hammer"
+material_id = &"stone"
+metadata/_custom_type_script = "uid://wfsgvgajk56a"

@@ -1,22 +1,22 @@
-[gd_scene format=3 uid="uid://c8o3yoq1v0o04"]
+[gd_scene format=3 uid="uid://ua75dyljn35f"]
 
-[ext_resource type="Script" uid="uid://dot7lrj1gmqy3" path="res://scripts/world/resource_node.gd" id="1_eg8lp"]
-[ext_resource type="Texture2D" uid="uid://bjcxf4uj88jfu" path="res://assets/objects/stone.svg" id="2_eg8lp"]
-[ext_resource type="Resource" uid="uid://b0yp3nshcyd23" path="res://data/items/stone.tres" id="2_mc65e"]
+[ext_resource type="Script" uid="uid://dot7lrj1gmqy3" path="res://scripts/world/resource_node.gd" id="1_b432q"]
+[ext_resource type="Resource" uid="uid://b0yp3nshcyd23" path="res://data/items/objects/stone.tres" id="2_jj3fh"]
+[ext_resource type="Texture2D" uid="uid://d1vx2xm5aef3x" path="res://assets/objects/objects/stone_textura.svg" id="3_q2g4f"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mc65e"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_joqdt"]
+size = Vector2(30, 30)
 
-[node name="Stone" type="StaticBody2D" unique_id=1208935418]
-script = ExtResource("1_eg8lp")
-required_tool_id = "pickaxe"
-resource_item = ExtResource("2_mc65e")
-resource_amount = 3
-hits_required = 4
-metadata/_custom_type_script = "uid://dot7lrj1gmqy3"
+[node name="Stone" type="StaticBody2D" unique_id=1366884939]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_b432q")
+required_tool_id = "hand"
+resource_item = ExtResource("2_jj3fh")
+energy_cost = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=714173776]
-texture = ExtResource("2_eg8lp")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1999518441]
+texture = ExtResource("3_q2g4f")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1135247698]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=855193267]
 position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_mc65e")
+shape = SubResource("RectangleShape2D_joqdt")

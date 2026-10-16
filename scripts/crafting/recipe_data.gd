@@ -7,3 +7,5 @@ extends Resource
 
 @export var ingredients: Array[ItemData] = []
 @export var ingredient_amounts: Array[int] = []
+
+@export var unlocked_by_default: bool = true

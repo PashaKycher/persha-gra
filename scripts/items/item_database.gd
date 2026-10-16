@@ -6,11 +6,13 @@ var items: Dictionary = {}
 
 
 func _ready() -> void:
-	register_item(preload("res://data/items/wood.tres"))
-	register_item(preload("res://data/items/stone.tres"))
-	register_item(preload("res://data/items/branch.tres"))
-	register_item(preload("res://data/items/stone_knife.tres"))
-	register_item(preload("res://data/items/stone_hammer.tres"))
+	register_item(preload("res://data/items/objects/wood.tres"))
+	register_item(preload("res://data/items/objects/stone.tres"))
+	register_item(preload("res://data/items/objects/branch.tres"))
+	register_item(preload("res://data/items/tool/stone_knife.tres"))
+	register_item(preload("res://data/items/tool/stone_hammer.tres"))
+	register_item(preload("res://data/items/tool/stone_axe.tres"))
+	register_item(preload("res://data/items/tool/stone_pickaxe.tres"))
 
 
 func register_item(item: ItemData) -> void:

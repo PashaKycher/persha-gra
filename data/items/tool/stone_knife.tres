@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dh71uh333tkuy"]
+
+[ext_resource type="Texture2D" uid="uid://b28sogr1b8usw" path="res://assets/icons/tool/stone_knife_icon.svg" id="1_142i8"]
+[ext_resource type="Script" uid="uid://dipuet8c4utmg" path="res://scripts/items/item_data.gd" id="2_3xejs"]
+[ext_resource type="Resource" uid="uid://cq5gg5iajo6vv" path="res://data/tools/stone_knife_tool.tres" id="3_inb0e"]
+
+[resource]
+script = ExtResource("2_3xejs")
+id = "stone_knife"
+display_name = "Кам'яний ніж"
+max_stack = 1
+icon = ExtResource("1_142i8")
+tool_data = ExtResource("3_inb0e")
+metadata/_custom_type_script = "uid://dipuet8c4utmg"
