@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://crfrxjvs5ac4o" path="res://scenes/tools/stone_knife.tscn" id="8_jkv2x"]
 [ext_resource type="Script" uid="uid://dwj1tu0bctvmr" path="res://scripts/crafting/crafting_ui.gd" id="8_tipki"]
 [ext_resource type="PackedScene" uid="uid://elwio22gwq2b" path="res://scenes/tools/stone_pickaxe.tscn" id="9_jbj1t"]
+[ext_resource type="Script" uid="uid://deintna80kyhs" path="res://scripts/player/equipment.gd" id="14_a8y0u"]
 
 [sub_resource type="GDScript" id="GDScript_tefeu"]
 script/source = "extends Node2D
@@ -207,3 +208,6 @@ vertical_alignment = 2
 [node name="Timer" type="Timer" parent="Hud/CraftingUI" unique_id=1868875198]
 wait_time = 2.0
 one_shot = true
+
+[node name="Equipment" type="Node" parent="Hud" unique_id=662069587]
+script = ExtResource("14_a8y0u")

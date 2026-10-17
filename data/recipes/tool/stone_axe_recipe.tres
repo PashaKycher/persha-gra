@@ -10,5 +10,5 @@
 script = ExtResource("5_rabue")
 result_item = ExtResource("4_a8m2p")
 ingredients = Array[ExtResource("1_a8m2p")]([ExtResource("2_6he88"), ExtResource("3_m3ie4")])
-ingredient_amounts = Array[int]([1, 2])
+ingredient_amounts = Array[int]([3, 3])
 metadata/_custom_type_script = "uid://bcswiue0mknmm"

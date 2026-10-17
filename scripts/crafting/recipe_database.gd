@@ -2,20 +2,16 @@ extends Node
 
 var recipes: Array[RecipeData] = []
 
-
 func _ready() -> void:
 	register_recipe(preload("res://data/recipes/tool/stone_knife_recipe.tres"))
 	register_recipe(preload("res://data/recipes/tool/stone_hammer_recipe.tres"))
 	register_recipe(preload("res://data/recipes/tool/stone_axe_recipe.tres"))
 	register_recipe(preload("res://data/recipes/tool/stone_pickaxe_recipe.tres"))
 
-
 func register_recipe(recipe: RecipeData) -> void:
 	if recipe == null:
 		return
-
 	recipes.append(recipe)
-
 
 func get_all_recipes() -> Array[RecipeData]:
 	return recipes
