@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dtadtfbefu30r"]
+
+[ext_resource type="Script" uid="uid://bwu7hspt8h35n" path="res://scripts/ui/tooltips/recipe_scroll_tooltip.gd" id="1_dwayh"]
+
+[node name="RecipeScrollTooltip" type="PanelContainer" unique_id=227588942]
+custom_minimum_size = Vector2(240, 100)
+offset_right = 240.0
+offset_bottom = 117.0
+scale = Vector2(0.2, 0.2)
+mouse_filter = 2
+script = ExtResource("1_dwayh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=977532325]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer" unique_id=1875884909]
+layout_mode = 2
+text = "Сувій"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=1324141216]
+layout_mode = 2
+
+[node name="RecipeLabel" type="Label" parent="VBoxContainer" unique_id=1323431629]
+layout_mode = 2
+text = "Рецепт: —"
+
+[node name="DescriptionLabel" type="Label" parent="VBoxContainer" unique_id=403048965]
+layout_mode = 2
+text = "Натисни правою кнопкою, щоб відкрити дії."
+autowrap_mode = 2

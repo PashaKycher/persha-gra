@@ -10,6 +10,8 @@ extends CharacterBody2D
 @onready var crafting_system: CraftingSystem = $CraftingSystem
 @onready var equipment: Equipment = $"../Hud/Equipment"
 var energy: int = 100
+# Рецепти, які гравець уже вивчив
+var learned_recipe_ids: Array[String] = []
 
 func _ready() -> void:
 	energy = max_energy
@@ -51,3 +53,30 @@ func test_equipment() -> void:
 		print("Залишок в інвентарі: ", inventory.get_amount(item.id))
 	else:
 		print("Не вдалося екіпірувати предмет.")
+
+func has_learned_recipe(recipe: RecipeData) -> bool:
+	if recipe == null:
+		return false
+
+	return learned_recipe_ids.has(recipe.resource_path)
+
+func learn_recipe(recipe: RecipeData) -> bool:
+	if recipe == null:
+		return false
+
+	var recipe_id: String = recipe.resource_path
+
+	if recipe_id.is_empty():
+		push_warning("У рецепту немає шляху до ресурсу.")
+		return false
+
+	if learned_recipe_ids.has(recipe_id):
+		print("Рецепт уже вивчений: ", recipe_id)
+		return false
+
+	learned_recipe_ids.append(recipe_id)
+
+	print("ВИВЧЕНО: ", recipe_id)
+	print("Усі вивчені рецепти: ", learned_recipe_ids)
+
+	return true

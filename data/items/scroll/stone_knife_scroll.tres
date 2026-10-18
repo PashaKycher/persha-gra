@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RecipeScrollData" format=3 uid="uid://dkr8ls5oi1u0p"]
+
+[ext_resource type="Script" uid="uid://bgwqsw73vlcsa" path="res://scripts/items/recipe_scroll_data.gd" id="1_5eidi"]
+[ext_resource type="Texture2D" uid="uid://2o0fivgaa5vj" path="res://assets/icons/objects/scroll_item_icon.svg" id="1_ebqh1"]
+[ext_resource type="Resource" uid="uid://d3k58glaudxsv" path="res://data/recipes/tool/stone_knife_recipe.tres" id="2_jcr1g"]
+
+[resource]
+script = ExtResource("1_5eidi")
+recipe = ExtResource("2_jcr1g")
+id = "stone_knife_scroll"
+display_name = "Сувій: кам'яний ніж"
+max_stack = 1
+icon = ExtResource("1_ebqh1")
+metadata/_custom_type_script = "uid://bgwqsw73vlcsa"

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://d1b5uph1sw7fo"]
+
+[ext_resource type="Script" uid="uid://bn7gay43dk2w0" path="res://scripts/ui/tooltips/item_amount_dialog.gd" id="1_6ko84"]
+
+[node name="ItemAmountDialog" type="PanelContainer" unique_id=216228061]
+custom_minimum_size = Vector2(280, 130)
+script = ExtResource("1_6ko84")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1735026099]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1470691446]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1463842490]
+layout_mode = 2
+text = "Виберіть кількість"
+
+[node name="AmountSlider" type="HSlider" parent="MarginContainer/VBoxContainer" unique_id=351576859]
+layout_mode = 2
+min_value = 1.0
+max_value = 1.0
+value = 1.0
+
+[node name="AmountLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=420710755]
+layout_mode = 2
+text = "1 / 1"
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=511874927]
+layout_mode = 2
+
+[node name="ConfirmButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonsContainer" unique_id=828132437]
+layout_mode = 2
+text = "✓"
+
+[node name="CancelButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonsContainer" unique_id=127803414]
+layout_mode = 2
+text = "✕"

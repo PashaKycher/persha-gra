@@ -10,12 +10,21 @@ var context_item: ItemData = null
 var context_source: String = ""
 var context_equipment_index: int = -1
 
+# своя панель підказки
+const RECIPE_SCROLL_TOOLTIP_SCENE: PackedScene = preload(
+    "res://ui/tooltips/RecipeScrollTooltip.tscn"
+)
+
+var recipe_scroll_tooltip: Control
+
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
 	visible = false
 	create_slots()
 	setup_equipment_slots()
 	setup_context_menu()
+	recipe_scroll_tooltip = RECIPE_SCROLL_TOOLTIP_SCENE.instantiate()
+	add_child(recipe_scroll_tooltip)
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_inventory"):
@@ -37,6 +46,8 @@ func create_slots() -> void:
 	var slot_scene = preload("res://ui/inventory/InventorySlot.tscn")
 	for i in range(36):
 		var slot = slot_scene.instantiate()
+		slot.slot_hovered.connect(_on_slot_hovered)
+		slot.slot_unhovered.connect(_on_slot_unhovered)
 		grid.add_child(slot)
 		slot.context_requested.connect(_on_inventory_slot_context_requested)
 
@@ -131,7 +142,11 @@ func _on_inventory_slot_context_requested(slot: Control, item: ItemData) -> void
 	# Очищаємо пункти перед заповненням
 	context_menu.clear()
 
-	# Додаємо пункти залежно від типу предмета (або спільні для всіх)
+	# Сувій рецепту
+	if item is RecipeScrollData:
+		context_menu.add_item("Вивчити", 1)
+
+	# Інструмент
 	if is_tool:
 		context_menu.add_item("Надіти", 0)
 	
@@ -168,9 +183,7 @@ func _on_equipment_slot_context_requested(
 		refresh_inventory()
 		refresh_equipment()
 	else:
-		print("Інвентар заповнений. Не вдалося зняти предмет.")
-
-
+		return
 
 func _on_context_menu_id_pressed(id: int) -> void:
 	if player == null or context_item == null:
@@ -179,6 +192,40 @@ func _on_context_menu_id_pressed(id: int) -> void:
 	if context_source != "inventory":
 		return
 
+	# Вивчення рецепту із сувою
+	if id == 1:
+		if not context_item is RecipeScrollData:
+			return
+
+		var scroll := context_item as RecipeScrollData
+
+		if scroll.recipe == null:
+			push_warning("У сувою не прив'язаний рецепт.")
+			return
+
+		if player.has_learned_recipe(scroll.recipe):
+			context_menu.hide()
+			context_item = null
+			context_source = ""
+			return
+
+		if player.learn_recipe(scroll.recipe):
+			player.inventory.remove_item(scroll.id, 1)
+
+			context_menu.hide()
+			context_item = null
+			context_source = ""
+			context_equipment_index = -1
+
+			refresh_inventory()
+			
+			var crafting_ui := get_tree().current_scene.get_node_or_null("Hud/CraftingUI")
+
+			if crafting_ui:
+				crafting_ui.update_recipe_list()
+		return
+
+	# Екіпірування інструмента
 	if id != 0:
 		return
 
@@ -214,3 +261,41 @@ func _on_context_menu_id_pressed(id: int) -> void:
 	context_item = null
 	context_source = ""
 	context_equipment_index = -1
+
+func show_recipe_scroll_tooltip(item: ItemData, slot: Control) -> void:
+	if not item is RecipeScrollData:
+		hide_recipe_scroll_tooltip()
+		return
+
+	if recipe_scroll_tooltip == null:
+		return
+
+	recipe_scroll_tooltip.show_scroll_tooltip(item as RecipeScrollData)
+
+	var slot_rect: Rect2 = slot.get_global_rect()
+	var tooltip_size: Vector2 = recipe_scroll_tooltip.size
+
+	var viewport_size: Vector2 = get_viewport_rect().size
+	var position := slot_rect.position + Vector2(slot_rect.size.x + -6, 0)
+
+	if position.x + tooltip_size.x > viewport_size.x:
+		position.x = slot_rect.position.x - tooltip_size.x - 8
+
+	position.y = clampf(
+		position.y,
+		0.0,
+		maxf(0.0, viewport_size.y - tooltip_size.y)
+	)
+
+	recipe_scroll_tooltip.position = position
+
+
+func hide_recipe_scroll_tooltip() -> void:
+	if recipe_scroll_tooltip != null:
+		recipe_scroll_tooltip.hide_tooltip()
+
+func _on_slot_hovered(slot: Control, item: ItemData) -> void:
+	show_recipe_scroll_tooltip(item, slot)
+
+func _on_slot_unhovered() -> void:
+	hide_recipe_scroll_tooltip()

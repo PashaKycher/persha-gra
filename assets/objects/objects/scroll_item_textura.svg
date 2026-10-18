@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Тінь від сувою -->
+  <rect x="16" y="16" width="32" height="32" rx="2" fill="#000" opacity="0.25" />
+  
+  <!-- Основа паперу -->
+  <rect x="14" y="14" width="36" height="36" rx="3" fill="#f4e8d1" stroke="#4a3319" stroke-width="2.5" />
+  
+  <!-- Дерев'яні палички-основи зверху та знизу -->
+  <rect x="10" y="10" width="44" height="6" rx="3" fill="#a0714b" stroke="#4a3319" stroke-width="2" />
+  <rect x="10" y="48" width="44" height="6" rx="3" fill="#a0714b" stroke="#4a3319" stroke-width="2" />
+
+  <!-- Текстові рядки на сувої -->
+  <line x1="20" y1="23" x2="38" y2="23" stroke="#b09b7d" stroke-width="2" stroke-linecap="round" />
+  <line x1="20" y1="29" x2="44" y2="29" stroke="#b09b7d" stroke-width="2" stroke-linecap="round" />
+  <line x1="20" y1="35" x2="34" y2="35" stroke="#b09b7d" stroke-width="2" stroke-linecap="round" />
+  <line x1="20" y1="41" x2="40" y2="41" stroke="#b09b7d" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Мотузочка, що зав'язує сувій -->
+  <rect x="26" y="10" width="12" height="44" fill="none" />
+  <path d="M26 12 Q32 16 38 12" fill="none" stroke="#8b2500" stroke-width="3" />
+  <path d="M26 50 Q32 46 38 50" fill="none" stroke="#8b2500" stroke-width="3" />
+</svg>

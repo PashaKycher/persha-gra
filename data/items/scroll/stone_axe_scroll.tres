@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RecipeScrollData" format=3 uid="uid://dtvahdemnmlmn"]
+
+[ext_resource type="Texture2D" uid="uid://2o0fivgaa5vj" path="res://assets/icons/objects/scroll_item_icon.svg" id="1_eysmp"]
+[ext_resource type="Resource" uid="uid://cggww243pl7sf" path="res://data/recipes/tool/stone_axe_recipe.tres" id="2_eysmp"]
+[ext_resource type="Script" uid="uid://bgwqsw73vlcsa" path="res://scripts/items/recipe_scroll_data.gd" id="3_62khe"]
+
+[resource]
+script = ExtResource("3_62khe")
+recipe = ExtResource("2_eysmp")
+id = "stone_axe_scroll"
+display_name = "Сувій: кам'яна сокира"
+max_stack = 1
+icon = ExtResource("1_eysmp")
+metadata/_custom_type_script = "uid://bgwqsw73vlcsa"
