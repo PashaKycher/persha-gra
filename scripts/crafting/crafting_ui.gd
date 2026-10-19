@@ -43,27 +43,20 @@ func _process(_delta: float) -> void:
 func update_recipe_list() -> void:
 	for child in recipe_buttons.get_children():
 		child.queue_free()
-
 	selected_recipe = null
 	recipe_name.text = ""
 	ingredients.text = ""
 	result.text = ""
 	craft_button.disabled = true
-
 	var player := get_tree().get_first_node_in_group("player")
-	
 	if player:
 		print("CraftingUI бачить рецепти: ", player.learned_recipe_ids)
-
 	if player == null:
 		return
-
 	for recipe in RecipeDatabase.get_all_recipes():
 		print("Перевіряю рецепт: ", recipe.resource_path)
-		
 		if not player.has_learned_recipe(recipe):
 			continue
-
 		var button := Button.new()
 		button.text = recipe.result_item.display_name
 		button.pressed.connect(_on_recipe_selected.bind(recipe))

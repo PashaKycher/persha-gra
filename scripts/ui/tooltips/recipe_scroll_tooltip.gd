@@ -1,4 +1,3 @@
-
 extends PanelContainer
 
 @onready var title_label: Label = $VBoxContainer/TitleLabel
@@ -10,14 +9,11 @@ func _ready() -> void:
 	visible = false
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 
-
 func show_scroll_tooltip(item: RecipeScrollData) -> void:
 	if item == null:
 		hide_tooltip()
 		return
-
 	title_label.text = item.display_name
-
 	if item.recipe == null:
 		recipe_label.text = "Рецепт: невідомий"
 		description_label.text = "Цей сувій не містить доступного рецепта."
@@ -27,9 +23,7 @@ func show_scroll_tooltip(item: RecipeScrollData) -> void:
 	else:
 		recipe_label.text = "Рецепт: " + item.recipe.result_item.display_name
 		description_label.text = "Містить знання, необхідні для вивчення рецепта."
-
 	visible = true
-
 
 func hide_tooltip() -> void:
 	visible = false

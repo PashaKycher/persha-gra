@@ -133,7 +133,6 @@ func setup_context_menu() -> void:
 		_on_context_menu_action_selected
 	)
 
-
 func _on_inventory_slot_context_requested(
 	slot: Control,
 	item: ItemData
@@ -150,7 +149,6 @@ func _on_inventory_slot_context_requested(
 	var slot_rect: Rect2 = slot.get_global_rect()
 	var pos: Vector2 = slot_rect.position + slot_rect.size
 	context_menu.popup(Rect2(pos, Vector2.ZERO))
-
 
 func _on_context_menu_action_selected(action: String) -> void:
 	if player == null or context_item == null:

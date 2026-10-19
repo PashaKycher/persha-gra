@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 @export var speed: float = 150.0
 @export var max_energy: int = 10000
-@export var has_axe: bool = true
-@export var has_pickaxe: bool = true
+@export var has_axe: bool = false
+@export var has_pickaxe: bool = false
 @export var has_hand: bool = true
 @onready var interaction_detector: Area2D = $InteractionDetector
 @onready var inventory: Inventory = $Inventory

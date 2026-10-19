@@ -21,26 +21,24 @@ func interact() -> void:
 	if not player.spend_energy(energy_cost):
 		return
 	hits_left -= 1
-	print(
-		"Удар по ресурсу. Залишилось: ",
-		hits_left
-	)
 	if hits_left <= 0:
 		collect_resource(player)
 
+
 func can_use_tool(player: Node) -> bool:
+	# Якщо інструмент не потрібен — взаємодія дозволена.
 	if required_tool_id == "":
 		return true
-	if required_tool_id == "axe":
-		if player.has_axe:
-			return true
-	if required_tool_id == "pickaxe":
-		if player.has_pickaxe:
-			return true
+	# Руки доступні гравцю від самого початку.
 	if required_tool_id == "hand":
-		if player.has_hand:
-			return true	
-	print("Потрібен інструмент: ", required_tool_id)
+		return true
+	# Для сокири та кірки перевіряємо фактичне спорядження.
+	var equipment: Equipment = player.get("equipment") as Equipment
+	if equipment == null:
+		return false
+	if equipment.is_tool_type_equipped(StringName(required_tool_id)):
+		return true
+	print("Потрібен екіпірований інструмент: ", required_tool_id)
 	return false
 
 func collect_resource(player: Node) -> void:
@@ -48,12 +46,6 @@ func collect_resource(player: Node) -> void:
 		return
 	player.inventory.add_item(
 		resource_item,
-		resource_amount
-	)
-	print(
-		"Отримано: ",
-		resource_item.display_name,
-		" x",
 		resource_amount
 	)
 	queue_free()
