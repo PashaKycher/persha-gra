@@ -1,15 +1,31 @@
 [gd_scene format=3 uid="uid://b8il8vgcspmi7"]
 
-[node name="ItemContextMenu" type="PanelContainer" unique_id=982398034]
+[ext_resource type="Script" uid="uid://7o8nbcjpk6or" path="res://scripts/ui/tooltips/item_context_menu.gd" id="1_spwod"]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1884231898]
+[node name="ItemContextMenu" type="PanelContainer" unique_id=568886280]
+offset_right = 96.0
+offset_bottom = 144.0
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_spwod")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1302432653]
 layout_mode = 2
 
-[node name="EquipButton" type="Button" parent="VBoxContainer" unique_id=68755123]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1884231898]
 layout_mode = 2
 
-[node name="DropButton" type="Button" parent="VBoxContainer" unique_id=70288192]
+[node name="EquipButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=68755123]
 layout_mode = 2
+text = "Надіти"
 
-[node name="DestroyButton" type="Button" parent="VBoxContainer" unique_id=94659232]
+[node name="LearnButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1409463879]
 layout_mode = 2
+text = "Вивчити"
+
+[node name="DropButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=70288192]
+layout_mode = 2
+text = "Викинути"
+
+[node name="DestroyButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=94659232]
+layout_mode = 2
+text = "Знищити"
