@@ -4,8 +4,8 @@
 [ext_resource type="Resource" uid="uid://b0yp3nshcyd23" path="res://data/items/objects/stone.tres" id="2_84s6y"]
 [ext_resource type="Texture2D" uid="uid://bjcxf4uj88jfu" path="res://assets/objects/objects/boulder_textura.svg" id="2_eg8lp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mc65e"]
-size = Vector2(40, 35)
+[sub_resource type="CircleShape2D" id="CircleShape2D_6strp"]
+radius = 25.0
 
 [node name="Boulder" type="StaticBody2D" unique_id=1208935418]
 scale = Vector2(0.6, 0.6)
@@ -21,4 +21,4 @@ texture = ExtResource("2_eg8lp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1135247698]
 position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_mc65e")
+shape = SubResource("CircleShape2D_6strp")

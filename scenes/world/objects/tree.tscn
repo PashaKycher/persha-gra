@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://co6ebenfso221" path="res://data/items/objects/wood.tres" id="2_q6b82"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_joqdt"]
-size = Vector2(10, 8)
+size = Vector2(15, 10)
 
 [node name="Tree" type="StaticBody2D" unique_id=218222844]
 script = ExtResource("1_q6b82")
@@ -15,8 +15,8 @@ resource_amount = 2
 hits_required = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=515758990]
-position = Vector2(0, -20)
 texture = ExtResource("1_rvqxf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1592442168]
+position = Vector2(0, 18)
 shape = SubResource("RectangleShape2D_joqdt")

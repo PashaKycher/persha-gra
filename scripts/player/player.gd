@@ -37,22 +37,9 @@ func interact() -> void:
 
 func spend_energy(amount: int) -> bool:
 	if energy < amount:
-		print("Недостатньо енергії.")
 		return false
 	energy -= amount
-	print("Енергія: ", energy, "/", max_energy)
 	return true
-
-func test_equipment() -> void:
-	var item: ItemData = ItemDatabase.get_item("stone_axe")
-	if item == null:
-		print("Помилка: stone_axe не знайдено в ItemDatabase.")
-		return
-	if equipment.equip_item(item, inventory, 0):
-		print("Екіпіровано: ", item.display_name)
-		print("Залишок в інвентарі: ", inventory.get_amount(item.id))
-	else:
-		print("Не вдалося екіпірувати предмет.")
 
 func has_learned_recipe(recipe: RecipeData) -> bool:
 	if recipe == null:
@@ -71,12 +58,6 @@ func learn_recipe(recipe: RecipeData) -> bool:
 		return false
 
 	if learned_recipe_ids.has(recipe_id):
-		print("Рецепт уже вивчений: ", recipe_id)
 		return false
-
 	learned_recipe_ids.append(recipe_id)
-
-	print("ВИВЧЕНО: ", recipe_id)
-	print("Усі вивчені рецепти: ", learned_recipe_ids)
-
 	return true

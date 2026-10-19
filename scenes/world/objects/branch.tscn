@@ -4,8 +4,9 @@
 [ext_resource type="Resource" uid="uid://cry6v0nmwd523" path="res://data/items/objects/branch.tres" id="2_acidw"]
 [ext_resource type="Texture2D" uid="uid://by7hpm3ppppa0" path="res://assets/objects/objects/branch_textura.svg" id="3_yojqm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_joqdt"]
-size = Vector2(50, 50)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8cb8y"]
+radius = 20.0
+height = 70.0
 
 [node name="Branch" type="StaticBody2D" unique_id=1720985940]
 scale = Vector2(0.15, 0.15)
@@ -20,4 +21,5 @@ texture = ExtResource("3_yojqm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=536576302]
 position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_joqdt")
+rotation = 0.69464105
+shape = SubResource("CapsuleShape2D_8cb8y")

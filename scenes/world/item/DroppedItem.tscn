@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c838ur7o0cuoe"]
+
+[ext_resource type="Script" uid="uid://beq03p7txw37k" path="res://scripts/world/item/dropped_item.gd" id="1_ji3ee"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ji3ee"]
+radius = 20.0
+
+[node name="DroppedItem" type="StaticBody2D" unique_id=480574659]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_ji3ee")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1869751192]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2120073038]
+shape = SubResource("CircleShape2D_ji3ee")

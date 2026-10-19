@@ -4,6 +4,9 @@
 
 [node name="ItemAmountDialog" type="PanelContainer" unique_id=216228061]
 custom_minimum_size = Vector2(280, 130)
+offset_right = 280.0
+offset_bottom = 130.0
+scale = Vector2(0.2, 0.2)
 script = ExtResource("1_6ko84")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1735026099]

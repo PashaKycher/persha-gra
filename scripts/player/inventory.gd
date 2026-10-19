@@ -6,7 +6,8 @@ extends Control
 @export_group("Позиціювання підказки")
 @export var tooltip_offset: Vector2 = Vector2(16, 12)
 @export var tooltip_show_on_left_offset: float = 8.0
-
+var amount_dialog: PanelContainer
+var pending_item_action: String = ""
 var player: CharacterBody2D
 var equipment_slot_nodes: Array[Control] = []
 var context_menu: PanelContainer
@@ -14,9 +15,14 @@ var context_item: ItemData = null
 var context_source: String = ""
 var context_equipment_index: int = -1
 var recipe_scroll_tooltip: Control
-# своя панель підказки
 const RECIPE_SCROLL_TOOLTIP_SCENE: PackedScene = preload(
     "res://ui/tooltips/RecipeScrollTooltip.tscn"
+)
+const DROPPED_ITEM_SCENE: PackedScene = preload(
+	"res://scenes/world/item/DroppedItem.tscn"
+)
+const ITEM_AMOUNT_DIALOG_SCENE: PackedScene = preload(
+	"res://ui/tooltips/ItemAmountDialog.tscn"
 )
 
 
@@ -27,6 +33,10 @@ func _ready() -> void:
 	setup_equipment_slots()
 	setup_context_menu()
 	recipe_scroll_tooltip = RECIPE_SCROLL_TOOLTIP_SCENE.instantiate()
+	amount_dialog = ITEM_AMOUNT_DIALOG_SCENE.instantiate() as PanelContainer
+	add_child(amount_dialog)
+	amount_dialog.confirmed.connect(_on_amount_dialog_confirmed)
+	amount_dialog.cancelled.connect(_on_amount_dialog_cancelled)
 	add_child(recipe_scroll_tooltip)
 
 func _process(_delta: float) -> void:
@@ -133,9 +143,9 @@ func _on_context_menu_action_selected(action: String) -> void:
 		"learn":
 			_on_context_menu_id_pressed(1)
 		"drop":
-			print("Дію «Викинути» буде підключено на наступному етапі.")
+			request_item_action("drop")
 		"destroy":
-			print("Дію «Знищити» буде підключено на наступному етапі.")
+			request_item_action("destroy")
 
 func _on_equipment_slot_context_requested(
 	slot: Control,
@@ -240,3 +250,93 @@ func _on_slot_hovered(slot: Control, item: ItemData) -> void:
 
 func _on_slot_unhovered() -> void:
 	hide_recipe_scroll_tooltip()
+
+func request_item_action(action: String) -> void:
+	if player == null or context_item == null:
+		return
+	var available_amount: int = player.inventory.get_amount(context_item.id)
+	if available_amount <= 0:
+		clear_context_item()
+		refresh_inventory()
+		return
+	# Одну одиницю обробляємо без додаткового вікна.
+	if available_amount == 1:
+		execute_item_action(action, 1)
+		return
+	# Якщо предметів декілька — просимо вибрати кількість.
+	pending_item_action = action
+	var dialog_title: String
+	match action:
+		"drop":
+			dialog_title = "Викинути предмет"
+		"destroy":
+			dialog_title = "Знищити предмет"
+		_:
+			return
+	amount_dialog.global_position = context_menu.global_position
+	amount_dialog.open_dialog(dialog_title, available_amount)
+
+func _on_amount_dialog_confirmed(selected_amount: int) -> void:
+	if pending_item_action.is_empty():
+		return
+	var action := pending_item_action
+	pending_item_action = ""
+	execute_item_action(action, selected_amount)
+
+func _on_amount_dialog_cancelled() -> void:
+	pending_item_action = ""
+	clear_context_item()
+
+func execute_item_action(action: String, selected_amount: int) -> void:
+	if player == null or context_item == null:
+		return
+	if context_source != "inventory":
+		return
+	var item: ItemData = context_item
+	var available_amount: int = player.inventory.get_amount(item.id)
+	if selected_amount <= 0 or selected_amount > available_amount:
+		return
+	match action:
+		"drop":
+			drop_item(item, selected_amount)
+		"destroy":
+			if player.inventory.remove_item(item.id, selected_amount):
+				refresh_inventory()
+				clear_context_item()
+
+func drop_item(item: ItemData, selected_amount: int) -> void:
+	if item == null or selected_amount <= 0:
+		return
+	# Спочатку створюємо предмет на землі.
+	var dropped_item = DROPPED_ITEM_SCENE.instantiate()
+	dropped_item.setup_item(item, selected_amount)
+	var world := get_tree().current_scene
+	world.add_child(dropped_item)
+	# Поки що викидаємо праворуч від гравця.
+	dropped_item.global_position = player.global_position + Vector2(24, 0)
+	# Вилучаємо предмет з інвентаря.
+	if player.inventory.remove_item(item.id, selected_amount):
+		refresh_inventory()
+		clear_context_item()
+	else:
+		# Якщо вилучення не вдалося, прибираємо створений об'єкт.
+		dropped_item.queue_free()
+
+func clear_context_item() -> void:
+	context_item = null
+	context_source = ""
+	context_equipment_index = -1
+	if context_menu != null:
+		context_menu.hide()
+
+
+func _input(event: InputEvent) -> void:
+	if not context_menu or not context_menu.visible:
+		return
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			var mouse_position: Vector2 = event.position
+			var menu_rect: Rect2 = context_menu.get_global_rect()
+			if not menu_rect.has_point(mouse_position):
+				context_menu.hide()
+				clear_context_item()
