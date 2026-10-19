@@ -15,6 +15,7 @@ var context_item: ItemData = null
 var context_source: String = ""
 var context_equipment_index: int = -1
 var recipe_scroll_tooltip: Control
+var recipe_scroll_learn_window: RecipeScrollLearnWindow
 const RECIPE_SCROLL_TOOLTIP_SCENE: PackedScene = preload(
     "res://ui/tooltips/RecipeScrollTooltip.tscn"
 )
@@ -23,6 +24,9 @@ const DROPPED_ITEM_SCENE: PackedScene = preload(
 )
 const ITEM_AMOUNT_DIALOG_SCENE: PackedScene = preload(
 	"res://ui/tooltips/ItemAmountDialog.tscn"
+)
+const RECIPE_SCROLL_LEARN_WINDOW_SCENE: PackedScene = preload(
+	"res://ui/tooltips/RecipeScrollLearnWindow.tscn.tscn"
 )
 
 
@@ -38,16 +42,32 @@ func _ready() -> void:
 	amount_dialog.confirmed.connect(_on_amount_dialog_confirmed)
 	amount_dialog.cancelled.connect(_on_amount_dialog_cancelled)
 	add_child(recipe_scroll_tooltip)
+	recipe_scroll_learn_window = (
+		RECIPE_SCROLL_LEARN_WINDOW_SCENE.instantiate()
+		as RecipeScrollLearnWindow
+	)
+	add_child(recipe_scroll_learn_window)
+	recipe_scroll_learn_window.scroll_learned.connect(
+		_on_recipe_scroll_learned
+	)
+	recipe_scroll_learn_window.cancelled.connect(
+		_on_recipe_scroll_learning_cancelled
+)
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_inventory"):
 		visible = not visible
-		if not visible and context_menu:
-			context_menu.hide() # Ховаємо меню при закритті інвентарю
+	if not visible:
+		if context_menu:
+			context_menu.hide()
+		if recipe_scroll_learn_window:
+			recipe_scroll_learn_window.close_window()
 	if Input.is_key_pressed(KEY_ESCAPE):
 		visible = false
 		if context_menu:
-			context_menu.hide() # Ховаємо меню по ESC
+			context_menu.hide()
+		if recipe_scroll_learn_window:
+			recipe_scroll_learn_window.close_window()
 	if visible:
 		refresh_inventory()
 		refresh_equipment()
@@ -179,21 +199,13 @@ func _on_context_menu_id_pressed(id: int) -> void:
 		if scroll.recipe == null:
 			push_warning("У сувою не прив'язаний рецепт.")
 			return
+		# Якщо рецепт уже вивчений — нічого не відкриваємо.
 		if player.has_learned_recipe(scroll.recipe):
-			context_menu.hide()
-			context_item = null
-			context_source = ""
+			clear_context_item()
 			return
-		if player.learn_recipe(scroll.recipe):
-			player.inventory.remove_item(scroll.id, 1)
-			context_menu.hide()
-			context_item = null
-			context_source = ""
-			context_equipment_index = -1
-			refresh_inventory()
-			var crafting_ui := get_tree().current_scene.get_node_or_null("Hud/CraftingUI")
-			if crafting_ui:
-				crafting_ui.update_recipe_list()
+		hide_recipe_scroll_tooltip()
+		context_menu.hide()
+		recipe_scroll_learn_window.open_for_scroll(scroll)
 		return
 	# Екіпірування інструмента
 	if id != 0:
@@ -329,7 +341,6 @@ func clear_context_item() -> void:
 	if context_menu != null:
 		context_menu.hide()
 
-
 func _input(event: InputEvent) -> void:
 	if not context_menu or not context_menu.visible:
 		return
@@ -340,3 +351,31 @@ func _input(event: InputEvent) -> void:
 			if not menu_rect.has_point(mouse_position):
 				context_menu.hide()
 				clear_context_item()
+
+func _on_recipe_scroll_learned(scroll: RecipeScrollData) -> void:
+	if player == null or scroll == null:
+		clear_context_item()
+		return
+	if scroll.recipe == null:
+		clear_context_item()
+		return
+	# Повторно перевіряємо, чи рецепт ще не вивчений.
+	if player.has_learned_recipe(scroll.recipe):
+		clear_context_item()
+		return
+	# Перевіряємо наявність сувою перед вивченням.
+	if player.inventory.get_amount(scroll.id) <= 0:
+		clear_context_item()
+		return
+	if player.learn_recipe(scroll.recipe):
+		player.inventory.remove_item(scroll.id, 1)
+		refresh_inventory()
+		var crafting_ui := get_tree().current_scene.get_node_or_null(
+			"Hud/CraftingUI"
+		)
+		if crafting_ui:
+			crafting_ui.update_recipe_list()
+	clear_context_item()
+
+func _on_recipe_scroll_learning_cancelled() -> void:
+	clear_context_item()

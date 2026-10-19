@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://d3n1pu0lnsi3p"]
+
+[ext_resource type="Script" uid="uid://c8ejs5tkqatsy" path="res://scripts/ui/tooltips/recipe_scroll_learn_window.gd" id="1_7mt7p"]
+[ext_resource type="Script" uid="uid://cmsprug8d3t6k" path="res://scripts/ui/tooltips/recipe_scroll_drag_icon.gd" id="1_eqt2j"]
+[ext_resource type="Script" uid="uid://i8d6cumyhlik" path="res://scripts/ui/tooltips/recipe_scroll_drop_zone.gd" id="2_42bcn"]
+
+[node name="RecipeScrollLearnWindow_tscn" type="Control" unique_id=879379358]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_7mt7p")
+
+[node name="Backdrop" type="ColorRect" parent="." unique_id=60719374]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.15294118, 0.20392157, 0.27450982, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1771574209]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WindowPanel" type="PanelContainer" parent="CenterContainer" unique_id=1325770288]
+custom_minimum_size = Vector2(560, 300)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/WindowPanel" unique_id=1703237768]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/WindowPanel/MarginContainer" unique_id=415044964]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="CenterContainer/WindowPanel/MarginContainer/VBoxContainer" unique_id=1091838473]
+layout_mode = 2
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/WindowPanel/MarginContainer/VBoxContainer/Header" unique_id=1155538780]
+layout_mode = 2
+text = "Вивчення рецепту"
+
+[node name="CloseButton" type="Button" parent="CenterContainer/WindowPanel/MarginContainer/VBoxContainer/Header" unique_id=1718504640]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "×"
+
+[node name="DescriptionLabel" type="Label" parent="CenterContainer/WindowPanel/MarginContainer/VBoxContainer" unique_id=1441344505]
+layout_mode = 2
+text = "Перетягніть сувій у спеціальну область, щоб вивчити рецепт"
+
+[node name="DragRow" type="HBoxContainer" parent="CenterContainer/WindowPanel/MarginContainer/VBoxContainer" unique_id=1789908969]
+layout_mode = 2
+
+[node name="ScrollDragIcon" type="TextureRect" parent="CenterContainer/WindowPanel/MarginContainer/VBoxContainer/DragRow" unique_id=1395784593]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+mouse_filter = 0
+script = ExtResource("1_eqt2j")
+
+[node name="ArrowLabel" type="Label" parent="CenterContainer/WindowPanel/MarginContainer/VBoxContainer/DragRow" unique_id=338283310]
+layout_mode = 2
+text = "→"
+
+[node name="DropZone" type="PanelContainer" parent="CenterContainer/WindowPanel/MarginContainer/VBoxContainer/DragRow" unique_id=2115767519]
+custom_minimum_size = Vector2(160, 140)
+layout_mode = 2
+script = ExtResource("2_42bcn")
+
+[node name="DropLabel" type="Label" parent="CenterContainer/WindowPanel/MarginContainer/VBoxContainer/DragRow/DropZone" unique_id=1312577551]
+layout_mode = 2
+text = "Перетягніть сувій сюди"
+
+[node name="StatusLabel" type="Label" parent="CenterContainer/WindowPanel/MarginContainer/VBoxContainer" unique_id=1612359070]
+layout_mode = 2
