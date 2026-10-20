@@ -3,6 +3,7 @@ extends Node
 
 var items: Dictionary = {} # Словник {"wood": 2, ...}
 
+# Макс слот
 const MAX_SLOTS: int = 36
 
 func can_add_item(item: ItemData) -> bool:

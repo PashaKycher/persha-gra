@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 @export var speed: float = 150.0
-@export var max_energy: int = 10000
+#Енергія
+@export var max_energy: int = 100
 @export var has_axe: bool = false
 @export var has_pickaxe: bool = false
 @export var has_hand: bool = true
@@ -9,10 +10,14 @@ extends CharacterBody2D
 @onready var inventory: Inventory = $Inventory
 @onready var crafting_system: CraftingSystem = $CraftingSystem
 @onready var equipment: Equipment = $"../Hud/Equipment"
-var energy: int = 100
+@onready var hud: CanvasLayer = $"../Hud"
+var current_hint_target: Node = null
+# Енергія 
+var energy: int = 1 
 # Рецепти, які гравець уже вивчив
 var learned_recipe_ids: Array[String] = []
 
+#Енергія
 func _ready() -> void:
 	energy = max_energy
 
@@ -27,6 +32,7 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func _process(_delta: float) -> void:
+	update_interaction_hint()
 	if Input.is_action_just_pressed("interact"):
 		interact()
 
@@ -61,3 +67,19 @@ func learn_recipe(recipe: RecipeData) -> bool:
 		return false
 	learned_recipe_ids.append(recipe_id)
 	return true
+
+func update_interaction_hint() -> void:
+	var target: Node = interaction_detector.get_hint_target()
+	if target == null:
+		current_hint_target = null
+		hud.set_interaction_hint("")
+		return
+	current_hint_target = target
+	if target.has_method("get_interaction_hint"):
+		hud.set_interaction_hint(target.get_interaction_hint())
+	else:
+		hud.set_interaction_hint("E: взаємодія")
+
+func show_interaction_message(message: String) -> void:
+	if hud != null:
+		hud.show_interaction_message(message)

@@ -17,6 +17,12 @@ func interact() -> void:
 	if player == null:
 		return
 	if not can_use_tool(player):
+		player.show_interaction_message(
+			"Потрібен інструмент: %s" % get_tool_name()
+		)
+		return
+	if player.energy < energy_cost:
+		player.show_interaction_message("Недостатньо енергії")
 		return
 	if not player.spend_energy(energy_cost):
 		return
@@ -24,28 +30,59 @@ func interact() -> void:
 	if hits_left <= 0:
 		collect_resource(player)
 
-
 func can_use_tool(player: Node) -> bool:
-	# Якщо інструмент не потрібен — взаємодія дозволена.
-	if required_tool_id == "":
+	if required_tool_id == "" or required_tool_id == "hand":
 		return true
-	# Руки доступні гравцю від самого початку.
-	if required_tool_id == "hand":
-		return true
-	# Для сокири та кірки перевіряємо фактичне спорядження.
 	var equipment: Equipment = player.get("equipment") as Equipment
 	if equipment == null:
 		return false
-	if equipment.is_tool_type_equipped(StringName(required_tool_id)):
-		return true
-	print("Потрібен екіпірований інструмент: ", required_tool_id)
-	return false
+	return equipment.is_tool_type_equipped(
+		StringName(required_tool_id)
+	)
+
+func get_tool_name() -> String:
+	match required_tool_id:
+		"axe": return "сокира"
+		"pickaxe": return "кірка"
+		"hammer": return "молот"
+		"knife": return "ніж"
+		"hand": return "руки"
+		_: return required_tool_id
 
 func collect_resource(player: Node) -> void:
 	if resource_item == null:
+		player.show_interaction_message("Помилка: не задано предмет ресурсу")
 		return
-	player.inventory.add_item(
-		resource_item,
-		resource_amount
+	if not player.inventory.can_add_item(resource_item):
+		player.show_interaction_message("Інвентар заповнений")
+		hits_left = 1
+		return
+	player.inventory.add_item(resource_item, resource_amount)
+	player.show_interaction_message(
+		"Отримано: %s ×%d" % [
+			resource_item.display_name,
+			resource_amount
+		]
 	)
 	queue_free()
+
+func get_interaction_hint() -> String:
+	var resource_name := "Ресурс"
+	if resource_item != null:
+		resource_name = resource_item.display_name
+	if required_tool_id == "" or required_tool_id == "hand":
+		return "%s — E: взаємодія" % resource_name
+	var tool_name := get_tool_name()
+	var equipment: Equipment = null
+	var player := get_tree().get_first_node_in_group("player")
+	if player != null:
+		equipment = player.get("equipment") as Equipment
+	if equipment != null:
+		if equipment.is_tool_type_equipped(
+			StringName(required_tool_id)
+		):
+			return "%s — E: добути" % resource_name
+	return "%s — потрібен інструмент: %s" % [
+		resource_name,
+		tool_name
+	]

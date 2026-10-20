@@ -26,3 +26,17 @@ text = "ENERGY"
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
 value = 100.0
+
+[node name="InteractionMessage" type="Label" parent="HUDPanel/VBoxContainer" unique_id=750730856]
+visible = false
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="InteractionHint" type="Label" parent="HUDPanel/VBoxContainer" unique_id=1731629957]
+visible = false
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 2

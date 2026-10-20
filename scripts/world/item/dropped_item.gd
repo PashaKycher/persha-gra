@@ -25,8 +25,28 @@ func interact() -> void:
 	var player := get_tree().get_first_node_in_group("player")
 	if player == null or player.inventory == null:
 		return
-	# Не забираємо предмет, якщо в інвентарі немає місця.
 	if not player.inventory.can_add_item(item_data):
+		player.show_interaction_message("Інвентар заповнений")
 		return
 	player.inventory.add_item(item_data, amount)
+	player.show_interaction_message(
+		"Отримано: %s ×%d" % [
+			item_data.display_name,
+			amount
+		]
+	)
 	queue_free()
+
+
+func get_interaction_hint() -> String:
+	if item_data == null or amount <= 0:
+		return ""
+	var player := get_tree().get_first_node_in_group("player")
+	if player == null or player.inventory == null:
+		return ""
+	if not player.inventory.can_add_item(item_data):
+		return "Інвентар заповнений"
+	return "%s ×%d — E: підібрати" % [
+		item_data.display_name,
+		amount
+	]
