@@ -37,7 +37,6 @@ func interact() -> void:
 	)
 	queue_free()
 
-
 func get_interaction_hint() -> String:
 	if item_data == null or amount <= 0:
 		return ""
@@ -46,7 +45,9 @@ func get_interaction_hint() -> String:
 		return ""
 	if not player.inventory.can_add_item(item_data):
 		return "Інвентар заповнений"
-	return "%s ×%d — E: підібрати" % [
+	var key_name: String = player.get_interact_key_name()
+	return "%s ×%d — %s: підібрати" % [
 		item_data.display_name,
-		amount
+		amount,
+		key_name
 	]

@@ -49,8 +49,8 @@ func update_recipe_list() -> void:
 	result.text = ""
 	craft_button.disabled = true
 	var player := get_tree().get_first_node_in_group("player")
-	if player:
-		print("CraftingUI бачить рецепти: ", player.learned_recipe_ids)
+	#if player:
+		#print("CraftingUI бачить рецепти: ", player.learned_recipe_ids)
 	if player == null:
 		return
 	for recipe in RecipeDatabase.get_all_recipes():

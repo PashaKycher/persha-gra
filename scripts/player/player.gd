@@ -83,3 +83,21 @@ func update_interaction_hint() -> void:
 func show_interaction_message(message: String) -> void:
 	if hud != null:
 		hud.show_interaction_message(message)
+
+
+func get_interact_key_name() -> String:
+	var events := InputMap.action_get_events("interact")
+	for event in events:
+		if event is InputEventKey:
+			return OS.get_keycode_string(
+				event.physical_keycode if event.physical_keycode != 0 else event.keycode
+				)
+		if event is InputEventMouseButton:
+			match event.button_index:
+				MOUSE_BUTTON_LEFT:
+					return "Ліва кнопка миші"
+				MOUSE_BUTTON_RIGHT:
+					return "Права кнопка миші"
+				MOUSE_BUTTON_MIDDLE:
+					return "Середня кнопка миші"
+	return "Взаємодія"

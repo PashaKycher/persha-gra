@@ -70,18 +70,26 @@ func get_interaction_hint() -> String:
 	var resource_name := "Ресурс"
 	if resource_item != null:
 		resource_name = resource_item.display_name
+	var player := get_tree().get_first_node_in_group("player")
+	var key_name := "Взаємодія"
+	if player != null:
+		key_name = player.get_interact_key_name()
 	if required_tool_id == "" or required_tool_id == "hand":
-		return "%s — E: взаємодія" % resource_name
+		return "%s — %s: взаємодія" % [
+			resource_name,
+			key_name
+		]
 	var tool_name := get_tool_name()
 	var equipment: Equipment = null
-	var player := get_tree().get_first_node_in_group("player")
 	if player != null:
 		equipment = player.get("equipment") as Equipment
-	if equipment != null:
-		if equipment.is_tool_type_equipped(
-			StringName(required_tool_id)
-		):
-			return "%s — E: добути" % resource_name
+	if equipment != null and equipment.is_tool_type_equipped(
+		StringName(required_tool_id)
+	):
+		return "%s — %s: добути" % [
+			resource_name,
+			key_name
+		]
 	return "%s — потрібен інструмент: %s" % [
 		resource_name,
 		tool_name
