@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c5ai24a0435nw"]
+
+[ext_resource type="Texture2D" uid="uid://bb8qageqpagfg" path="res://assets/objects/objects/bed.svg" id="1_3dmla"]
+[ext_resource type="Script" uid="uid://lvwwglplbcsd" path="res://scripts/world/objects/sleep_spot.gd" id="1_ee8ui"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3l7na"]
+size = Vector2(370, 350)
+
+[node name="SleepSpot" type="StaticBody2D" unique_id=1632193533]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_ee8ui")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=223751688]
+texture = ExtResource("1_3dmla")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=100179781]
+shape = SubResource("RectangleShape2D_3l7na")
