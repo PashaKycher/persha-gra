@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://elwio22gwq2b" path="res://scenes/tools/stone_pickaxe.tscn" id="9_jbj1t"]
 [ext_resource type="Script" uid="uid://deintna80kyhs" path="res://scripts/player/equipment.gd" id="14_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://dtadtfbefu30r" path="res://ui/tooltips/RecipeScrollTooltip.tscn" id="17_0ld40"]
+[ext_resource type="PackedScene" uid="uid://dbmxnopkq43bh" path="res://ui/time/TimeHUD.tscn" id="20_gqmmt"]
 
 [sub_resource type="GDScript" id="GDScript_tefeu"]
 script/source = "extends Node2D
@@ -163,23 +164,11 @@ position = Vector2(500, 300)
 
 [node name="Hud" parent="." unique_id=1032515059 instance=ExtResource("6_tefeu")]
 
-[node name="InventoryUI" parent="Hud" unique_id=764993060 instance=ExtResource("1_o6xl0")]
-process_mode = 3
-offset_left = 10.0
-offset_top = 34.0
-offset_right = 10.0
-offset_bottom = 34.0
-mouse_filter = 2
-tooltip_offset = Vector2(2, 0)
-
-[node name="RecipeScrollTooltip" parent="Hud/InventoryUI" unique_id=227588942 instance=ExtResource("17_0ld40")]
-layout_mode = 0
-
 [node name="CraftingUI" type="Panel" parent="Hud" unique_id=1830975720]
-offset_left = 260.0
-offset_top = 34.0
-offset_right = 660.0
-offset_bottom = 564.0
+offset_left = 263.0
+offset_top = 35.0
+offset_right = 663.0
+offset_bottom = 565.0
 scale = Vector2(0.28, 0.28)
 script = ExtResource("8_tipki")
 
@@ -235,5 +224,19 @@ vertical_alignment = 2
 wait_time = 2.0
 one_shot = true
 
+[node name="InventoryUI" parent="Hud" unique_id=764993060 instance=ExtResource("1_o6xl0")]
+process_mode = 3
+offset_left = 10.0
+offset_top = 35.0
+offset_right = 10.0
+offset_bottom = 35.0
+mouse_filter = 2
+tooltip_offset = Vector2(2, 0)
+
+[node name="RecipeScrollTooltip" parent="Hud/InventoryUI" unique_id=227588942 instance=ExtResource("17_0ld40")]
+layout_mode = 0
+
 [node name="Equipment" type="Node" parent="Hud" unique_id=662069587]
 script = ExtResource("14_a8y0u")
+
+[node name="TimeHud" parent="." unique_id=496960627 instance=ExtResource("20_gqmmt")]

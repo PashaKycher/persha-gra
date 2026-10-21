@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 ItemDatabase="*uid://g4mpeapfp7d7"
 RecipeDatabase="*uid://cf2lmcc86lpef"
+GameTime="*uid://d3aidncechj8i"
 
 [display]
 

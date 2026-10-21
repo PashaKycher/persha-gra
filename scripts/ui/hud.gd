@@ -15,7 +15,7 @@ func _process(_delta: float) -> void:
 	if player == null:
 		return
 	update_energy()
-	update_inventory()
+	#update_inventory()
 
 func update_energy() -> void:
 	energy_bar.max_value = player.max_energy
@@ -25,8 +25,8 @@ func update_energy() -> void:
 		player.max_energy
 	]
 
-func update_inventory() -> void:
-	var wood_amount = player.inventory.get_amount("wood")
+#func update_inventory() -> void:
+	#var wood_amount = player.inventory.get_amount("wood")
 
 func show_interaction_message(message: String) -> void:
 	interaction_message.text = message

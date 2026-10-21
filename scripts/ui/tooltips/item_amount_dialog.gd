@@ -29,7 +29,7 @@ func open_dialog(dialog_title: String, available_amount: int) -> void:
 	_update_amount_label()
 	show()
 
-func _on_amount_changed(value: float) -> void:
+func _on_amount_changed(_value: float) -> void:
 	_update_amount_label()
 
 func _update_amount_label() -> void:

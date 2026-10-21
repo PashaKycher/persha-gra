@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dbmxnopkq43bh"]
+
+[ext_resource type="Script" uid="uid://dnnrbitlwgobb" path="res://scripts/ui/time_hud.gd" id="1_icy11"]
+
+[node name="TimeHud" type="CanvasLayer" unique_id=496960627]
+script = ExtResource("1_icy11")
+
+[node name="Panel" type="Panel" parent="." unique_id=315852768]
+offset_left = 330.0
+offset_top = 10.0
+offset_right = 480.0
+offset_bottom = 90.0
+scale = Vector2(0.3, 0.3)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1216264297]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DayLabel" type="Label" parent="Panel/VBoxContainer" unique_id=1003257527]
+layout_mode = 2
+
+[node name="TimeLabel" type="Label" parent="Panel/VBoxContainer" unique_id=1719068673]
+layout_mode = 2
+
+[node name="PeriodLabel" type="Label" parent="Panel/VBoxContainer" unique_id=39930885]
+layout_mode = 2
+
+[node name="CalendarLabel" type="Label" parent="Panel/VBoxContainer" unique_id=1311859857]
+layout_mode = 2

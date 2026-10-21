@@ -241,15 +241,15 @@ func show_recipe_scroll_tooltip(item: ItemData, slot: Control) -> void:
 	var slot_rect: Rect2 = slot.get_global_rect()
 	var tooltip_size: Vector2 = recipe_scroll_tooltip.size
 	var viewport_size: Vector2 = get_viewport_rect().size
-	var position := slot_rect.position + Vector2(
+	var position_pos := slot_rect.position + Vector2(
 		slot_rect.size.x + tooltip_offset.x,
 		tooltip_offset.y
 	)
 	# Якщо справа недостатньо місця — відкриваємо зліва
-	if position.x + tooltip_size.x > viewport_size.x:
-		position.x = slot_rect.position.x - tooltip_size.x - tooltip_show_on_left_offset
+	if position_pos.x + tooltip_size.x > viewport_size.x:
+		position_pos.x = slot_rect.position.x - tooltip_size.x - tooltip_show_on_left_offset
 	# Переводимо координати у локальну систему InventoryUI
-	recipe_scroll_tooltip.position = get_global_transform().affine_inverse() * position
+	recipe_scroll_tooltip.position = get_global_transform().affine_inverse() * position_pos
 
 func hide_recipe_scroll_tooltip() -> void:
 	if recipe_scroll_tooltip != null:

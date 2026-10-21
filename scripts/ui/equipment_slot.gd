@@ -7,7 +7,7 @@ signal context_requested(slot: Control, item: ItemData)
 
 var current_item: ItemData = null
 
-func set_item(item: ItemData, amount: int = 1) -> void:
+func set_item(item: ItemData, _amount: int = 1) -> void:
 	current_item = item
 	item_icon.texture = item.icon
 	amount_label.text = ""
