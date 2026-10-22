@@ -20,6 +20,7 @@ var pending_interaction_target: Node = null
 var facing_direction: Vector2 = Vector2.UP
 var pending_farm_action: bool = false
 var pending_farm_cell: Vector2i = Vector2i.ZERO
+var pending_plant_action: bool = false
 # Енергія 
 var energy: int = 1 
 # Рецепти, які гравець уже вивчив
@@ -56,7 +57,6 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
 		interact()
 
-
 func interact() -> void:
 	if is_attacking:
 		return
@@ -75,12 +75,23 @@ func interact() -> void:
 			return
 		if ground.get_cell_source_id(cell) == -1:
 			return
-		# Перевірки до запуску анімації.
+		# Якщо земля вже оброблена, перевіряємо посадку.
+		if farm_plots.tilled_cells.has(cell):
+			if not farm_plots.can_plant_seed(cell, self):
+				return
+			pending_farm_action = false
+			pending_plant_action = true
+			pending_farm_cell = cell
+			pending_interaction_target = null
+			play_slash_animation()
+			return
+		# Перевірки для обробки землі.
 		if not equipment.is_tool_type_equipped(&"hoe"):
-			show_interaction_message("Потрібно екіпірувати мотику.")
+			show_interaction_message(
+				"Потрібно екіпірувати мотику."
+			)
 			return
 		if farm_plots.tilled_cells.has(cell):
-			show_interaction_message("Ця земля вже оброблена.")
 			return
 		var hoe_energy_cost: int = 5
 		for item in equipment.slots:
@@ -92,8 +103,9 @@ func interact() -> void:
 		if energy < hoe_energy_cost:
 			show_interaction_message("Недостатньо енергії.")
 			return
-		pending_farm_cell = cell
 		pending_farm_action = true
+		pending_plant_action = false
+		pending_farm_cell = cell
 		pending_interaction_target = null
 		play_slash_animation()
 		return
@@ -105,9 +117,9 @@ func interact() -> void:
 		if hint == "Інвентар заповнений":
 			return
 	pending_farm_action = false
+	pending_plant_action = false
 	pending_interaction_target = target
 	play_slash_animation()
-
 
 func spend_energy(amount: int) -> bool:
 	if energy < amount:
@@ -148,7 +160,6 @@ func update_interaction_hint() -> void:
 func show_interaction_message(message: String) -> void:
 	if hud != null:
 		hud.show_interaction_message(message)
-
 
 func get_interact_key_name() -> String:
 	var events := InputMap.action_get_events("interact")
@@ -222,13 +233,16 @@ func play_slash_animation() -> void:
 	else:
 		sprite.play("slash_down")
 
-
 func _on_animation_finished() -> void:
 	if not is_attacking:
 		return
 	is_attacking = false
 	var target: Node = pending_interaction_target
 	pending_interaction_target = null
+	if pending_plant_action:
+		pending_plant_action = false
+		farm_plots.plant_seed(pending_farm_cell, self)
+		return
 	if pending_farm_action:
 		pending_farm_action = false
 		farm_plots.till_cell(pending_farm_cell, self)

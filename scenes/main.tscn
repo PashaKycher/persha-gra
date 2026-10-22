@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://dwj1tu0bctvmr" path="res://scripts/crafting/crafting_ui.gd" id="8_tipki"]
 [ext_resource type="Resource" uid="uid://oeata75jqpc5" path="res://data/items/scroll/stone_hoe_scroll.tres" id="8_y6deb"]
 [ext_resource type="PackedScene" uid="uid://elwio22gwq2b" path="res://scenes/tools/stone_pickaxe.tscn" id="9_jbj1t"]
+[ext_resource type="PackedScene" uid="uid://u26wef0yci0j" path="res://scenes/world/objects/seed.tscn" id="10_2wyq8"]
 [ext_resource type="Script" uid="uid://deintna80kyhs" path="res://scripts/player/equipment.gd" id="14_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://ct3kr80fegs6x" path="res://scenes/tools/stone_hoe.tscn" id="16_pm3ni"]
 [ext_resource type="PackedScene" uid="uid://dtadtfbefu30r" path="res://ui/tooltips/RecipeScrollTooltip.tscn" id="17_0ld40"]
@@ -121,6 +122,21 @@ resource_item = ExtResource("5_gqmmt")
 [node name="RecipeScroll6" parent="World" unique_id=1791105655 instance=ExtResource("2_jkv2x")]
 position = Vector2(486, 256)
 resource_item = ExtResource("8_y6deb")
+
+[node name="Seed" parent="World" unique_id=1151347826 instance=ExtResource("10_2wyq8")]
+position = Vector2(490.99997, 356)
+
+[node name="Seed2" parent="World" unique_id=336788703 instance=ExtResource("10_2wyq8")]
+position = Vector2(516, 352)
+
+[node name="Seed3" parent="World" unique_id=934602955 instance=ExtResource("10_2wyq8")]
+position = Vector2(548.00006, 332)
+
+[node name="Seed4" parent="World" unique_id=121391017 instance=ExtResource("10_2wyq8")]
+position = Vector2(507.00006, 384)
+
+[node name="Seed5" parent="World" unique_id=532708606 instance=ExtResource("10_2wyq8")]
+position = Vector2(545.00006, 364)
 
 [node name="Branch" parent="World" unique_id=1720985940 instance=ExtResource("2_o6xl0")]
 position = Vector2(590, 208)
