@@ -10,10 +10,16 @@ extends CharacterBody2D
 @onready var crafting_system: CraftingSystem = $CraftingSystem
 @onready var equipment: Equipment = $"../Hud/Equipment"
 @onready var hud: CanvasLayer = $"../Hud"
+@onready var ground: TileMapLayer = $"../World/Ground"
+@onready var farmable_ground: TileMapLayer = $"../World/FarmableGround"
+@onready var farm_plots: FarmPlots = $"../World/FarmPlots"
+
 var current_hint_target: Node = null
 var is_attacking: bool = false
 var pending_interaction_target: Node = null
 var facing_direction: Vector2 = Vector2.UP
+var pending_farm_action: bool = false
+var pending_farm_cell: Vector2i = Vector2i.ZERO
 # Енергія 
 var energy: int = 1 
 # Рецепти, які гравець уже вивчив
@@ -50,11 +56,46 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
 		interact()
 
+
 func interact() -> void:
 	if is_attacking:
 		return
 	var target: Node = interaction_detector.get_interactable()
 	if target == null:
+		var target_position: Vector2 = (
+			global_position + facing_direction * 16.0
+		)
+		var cell: Vector2i = ground.local_to_map(
+			ground.to_local(target_position)
+		)
+		if farmable_ground.get_cell_source_id(cell) == -1:
+			show_interaction_message(
+				"Тут не можна обробляти землю."
+			)
+			return
+		if ground.get_cell_source_id(cell) == -1:
+			return
+		# Перевірки до запуску анімації.
+		if not equipment.is_tool_type_equipped(&"hoe"):
+			show_interaction_message("Потрібно екіпірувати мотику.")
+			return
+		if farm_plots.tilled_cells.has(cell):
+			show_interaction_message("Ця земля вже оброблена.")
+			return
+		var hoe_energy_cost: int = 5
+		for item in equipment.slots:
+			if item == null or item.tool_data == null:
+				continue
+			if item.tool_data.tool_type == &"hoe":
+				hoe_energy_cost = item.tool_data.energy_cost
+				break
+		if energy < hoe_energy_cost:
+			show_interaction_message("Недостатньо енергії.")
+			return
+		pending_farm_cell = cell
+		pending_farm_action = true
+		pending_interaction_target = null
+		play_slash_animation()
 		return
 	if target.has_method("can_interact"):
 		if not target.can_interact(self):
@@ -63,9 +104,10 @@ func interact() -> void:
 		var hint: String = target.get_interaction_hint()
 		if hint == "Інвентар заповнений":
 			return
-
+	pending_farm_action = false
 	pending_interaction_target = target
 	play_slash_animation()
+
 
 func spend_energy(amount: int) -> bool:
 	if energy < amount:
@@ -180,15 +222,17 @@ func play_slash_animation() -> void:
 	else:
 		sprite.play("slash_down")
 
+
 func _on_animation_finished() -> void:
 	if not is_attacking:
 		return
-
 	is_attacking = false
-
-	var target := pending_interaction_target
+	var target: Node = pending_interaction_target
 	pending_interaction_target = null
-
+	if pending_farm_action:
+		pending_farm_action = false
+		farm_plots.till_cell(pending_farm_cell, self)
+		return
 	if is_instance_valid(target) and not target.is_queued_for_deletion():
 		if target.has_method("interact"):
 			target.interact()
