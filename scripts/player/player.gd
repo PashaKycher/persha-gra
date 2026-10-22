@@ -12,6 +12,7 @@ extends CharacterBody2D
 @onready var equipment: Equipment = $"../Hud/Equipment"
 @onready var hud: CanvasLayer = $"../Hud"
 var current_hint_target: Node = null
+var facing_direction: Vector2 = Vector2.UP
 # Енергія 
 var energy: int = 1 
 # Рецепти, які гравець уже вивчив
@@ -28,6 +29,11 @@ func _physics_process(_delta: float) -> void:
 		"move_up",
 		"move_down"
 	)
+	if direction != Vector2.ZERO:
+		if abs(direction.x) > abs(direction.y):
+			facing_direction = Vector2.RIGHT if direction.x > 0 else Vector2.LEFT
+		else:
+			facing_direction = Vector2.DOWN if direction.y > 0 else Vector2.UP
 	velocity = direction * speed
 	move_and_slide()
 

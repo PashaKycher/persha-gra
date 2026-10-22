@@ -4,8 +4,9 @@
 [ext_resource type="Resource" uid="uid://b5qwpyckm3ron" path="res://data/items/tool/stone_axe.tres" id="2_r4waw"]
 [ext_resource type="Texture2D" uid="uid://dho8pptiehaag" path="res://assets/objects/tool/stone_axe_textura.svg" id="3_64o52"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_joqdt"]
-size = Vector2(50, 50)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ggaip"]
+radius = 20.0
+height = 70.0
 
 [node name="Stone_axe" type="StaticBody2D" unique_id=1720985940]
 scale = Vector2(0.25, 0.25)
@@ -20,4 +21,5 @@ texture = ExtResource("3_64o52")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=536576302]
 position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_joqdt")
+rotation = 0.72082096
+shape = SubResource("CapsuleShape2D_ggaip")

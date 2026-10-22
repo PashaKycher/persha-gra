@@ -4,8 +4,9 @@
 [ext_resource type="Resource" uid="uid://dh71uh333tkuy" path="res://data/items/tool/stone_knife.tres" id="2_6bgh8"]
 [ext_resource type="Texture2D" uid="uid://dmj015h8w7neh" path="res://assets/objects/tool/stone_knife_textura.svg" id="3_4o0ep"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_joqdt"]
-size = Vector2(50, 50)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lh1v0"]
+radius = 20.0
+height = 70.0
 
 [node name="Stone_knife" type="StaticBody2D" unique_id=1720985940]
 scale = Vector2(0.25, 0.25)
@@ -20,4 +21,5 @@ texture = ExtResource("3_4o0ep")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=536576302]
 position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_joqdt")
+rotation = 0.7661995
+shape = SubResource("CapsuleShape2D_lh1v0")

@@ -7,6 +7,7 @@ func _ready() -> void:
 	register_recipe(preload("res://data/recipes/tool/stone_hammer_recipe.tres"))
 	register_recipe(preload("res://data/recipes/tool/stone_axe_recipe.tres"))
 	register_recipe(preload("res://data/recipes/tool/stone_pickaxe_recipe.tres"))
+	register_recipe(preload("res://data/recipes/tool/stone_hoe_recipe.tres"))
 
 func register_recipe(recipe: RecipeData) -> void:
 	if recipe == null:

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="64" height="64">
+  <g>
+    <!-- Тінь під мотикою -->
+    <ellipse cx="256" cy="430" rx="190" ry="25" fill="#000000" opacity="0.25" />
+
+    <!-- Дерев'яне руків'я (діагональний кут) -->
+    <path d="M 120 420 L 392 148 C 404 136, 404 116, 392 104 C 380 92, 360 92, 348 104 L 76 376 C 64 388, 64 408, 76 420 C 88 432, 108 432, 120 420 Z" fill="#8c5830" stroke="#3b2211" stroke-width="8" stroke-linejoin="round" />
+
+    <!-- Кам'яна насадка мотики (лезо згори) -->
+    <path d="M 330 60 L 452 90 C 470 95, 475 118, 458 128 L 360 180 C 345 188, 325 175, 330 155 Z" fill="#6e6e6e" stroke="#3b2211" stroke-width="8" stroke-linejoin="round" />
+
+    <!-- Текстура / блік на камені -->
+    <path d="M 350 85 L 430 105 L 375 145 Z" fill="#8c8c8c" opacity="0.5" />
+
+    <!-- Обмотка/кріплення руків'я до каменю -->
+    <rect x="305" y="125" width="40" height="20" rx="4" transform="rotate(-45 325 135)" fill="#5c4033" stroke="#3b2211" stroke-width="5" />
+    <rect x="285" y="145" width="40" height="20" rx="4" transform="rotate(-45 305 155)" fill="#5c4033" stroke="#3b2211" stroke-width="5" />
+  </g>
+</svg>

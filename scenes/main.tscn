@@ -18,8 +18,10 @@
 [ext_resource type="PackedScene" uid="uid://68iwx0dda00r" path="res://scenes/tools/stone_hammer.tscn" id="7_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://crfrxjvs5ac4o" path="res://scenes/tools/stone_knife.tscn" id="8_jkv2x"]
 [ext_resource type="Script" uid="uid://dwj1tu0bctvmr" path="res://scripts/crafting/crafting_ui.gd" id="8_tipki"]
+[ext_resource type="Resource" uid="uid://oeata75jqpc5" path="res://data/items/scroll/stone_hoe_scroll.tres" id="8_y6deb"]
 [ext_resource type="PackedScene" uid="uid://elwio22gwq2b" path="res://scenes/tools/stone_pickaxe.tscn" id="9_jbj1t"]
 [ext_resource type="Script" uid="uid://deintna80kyhs" path="res://scripts/player/equipment.gd" id="14_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://ct3kr80fegs6x" path="res://scenes/tools/stone_hoe.tscn" id="16_pm3ni"]
 [ext_resource type="PackedScene" uid="uid://dtadtfbefu30r" path="res://ui/tooltips/RecipeScrollTooltip.tscn" id="17_0ld40"]
 [ext_resource type="PackedScene" uid="uid://dbmxnopkq43bh" path="res://ui/time/TimeHUD.tscn" id="20_gqmmt"]
 
@@ -106,53 +108,57 @@ resource_item = ExtResource("4_0ld40")
 position = Vector2(356.00006, 256.99997)
 resource_item = ExtResource("5_gqmmt")
 
+[node name="RecipeScroll6" parent="World" unique_id=1791105655 instance=ExtResource("2_jkv2x")]
+position = Vector2(486, 256)
+resource_item = ExtResource("8_y6deb")
+
 [node name="Branch" parent="World" unique_id=1720985940 instance=ExtResource("2_o6xl0")]
 position = Vector2(590, 208)
 
 [node name="Branch2" parent="World" unique_id=1865749077 instance=ExtResource("2_o6xl0")]
-position = Vector2(621, 208)
+position = Vector2(598, 208)
 
 [node name="Branch3" parent="World" unique_id=1256167795 instance=ExtResource("2_o6xl0")]
-position = Vector2(590, 238)
+position = Vector2(583, 207)
 
 [node name="Branch4" parent="World" unique_id=1001680617 instance=ExtResource("2_o6xl0")]
-position = Vector2(590, 265)
+position = Vector2(576, 206)
 
 [node name="Branch5" parent="World" unique_id=1441114727 instance=ExtResource("2_o6xl0")]
-position = Vector2(620, 238)
+position = Vector2(605, 209)
 
 [node name="Branch6" parent="World" unique_id=350206813 instance=ExtResource("2_o6xl0")]
-position = Vector2(620, 264)
+position = Vector2(612, 210)
 
 [node name="Stone" parent="World" unique_id=1366884939 instance=ExtResource("3_85g3d")]
-position = Vector2(589, 310)
+position = Vector2(685, 266)
 
 [node name="Stone2" parent="World" unique_id=1881541060 instance=ExtResource("3_85g3d")]
-position = Vector2(619, 310)
+position = Vector2(686, 279)
 
 [node name="Stone3" parent="World" unique_id=1700569158 instance=ExtResource("3_85g3d")]
-position = Vector2(619, 367)
+position = Vector2(686, 320)
 
 [node name="Stone4" parent="World" unique_id=338677271 instance=ExtResource("3_85g3d")]
-position = Vector2(619, 339)
+position = Vector2(687, 293)
 
 [node name="Stone5" parent="World" unique_id=995698306 instance=ExtResource("3_85g3d")]
-position = Vector2(589, 340)
+position = Vector2(686, 306)
 
 [node name="Stone6" parent="World" unique_id=1807356050 instance=ExtResource("3_85g3d")]
-position = Vector2(589, 367)
+position = Vector2(671, 266)
 
 [node name="Boulder" parent="World" unique_id=1208935418 instance=ExtResource("3_tefeu")]
-position = Vector2(451, 249)
+position = Vector2(492.00003, 208)
 
 [node name="Boulder2" parent="World" unique_id=715334162 instance=ExtResource("3_tefeu")]
-position = Vector2(496, 219)
+position = Vector2(458, 208.00002)
 
 [node name="Tree" parent="World" unique_id=218222844 instance=ExtResource("2_sugp2")]
-position = Vector2(452, 208)
+position = Vector2(337, 192)
 
 [node name="Tree2" parent="World" unique_id=1692004292 instance=ExtResource("2_sugp2")]
-position = Vector2(499, 231)
+position = Vector2(378, 193)
 
 [node name="Stone_axe" parent="World" unique_id=698220414 instance=ExtResource("6_trceg")]
 position = Vector2(340, 258)
@@ -165,6 +171,9 @@ position = Vector2(348, 330)
 
 [node name="Stone_pickaxe" parent="World" unique_id=1016085763 instance=ExtResource("9_jbj1t")]
 position = Vector2(409, 329)
+
+[node name="Stone_hoe" parent="World" unique_id=382445804 instance=ExtResource("16_pm3ni")]
+position = Vector2(467, 261)
 
 [node name="Player" parent="." unique_id=934836812 instance=ExtResource("1_o5qli")]
 z_index = 10
