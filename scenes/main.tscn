@@ -178,6 +178,7 @@ position = Vector2(467, 261)
 [node name="Player" parent="." unique_id=934836812 instance=ExtResource("1_o5qli")]
 z_index = 10
 position = Vector2(500, 300)
+scale = Vector2(0.6, 0.6)
 
 [node name="Hud" parent="." unique_id=1032515059 instance=ExtResource("6_tefeu")]
 

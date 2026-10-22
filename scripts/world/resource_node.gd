@@ -94,3 +94,14 @@ func get_interaction_hint() -> String:
 		resource_name,
 		tool_name
 	]
+
+func can_interact(player: Node) -> bool:
+	if not can_use_tool(player):
+		return false
+	if player.energy < energy_cost:
+		return false
+	if resource_item == null:
+		return false
+	if not player.inventory.can_add_item(resource_item):
+		return false
+	return true
