@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://ec4unnj775df"]
 
-[ext_resource type="Script" uid="uid://dot7lrj1gmqy3" path="res://scripts/world/resource_node.gd" id="1_q6b82"]
-[ext_resource type="Texture2D" uid="uid://dbkserxhef4rt" path="res://assets/objects/objects/tree_textura.svg" id="1_rvqxf"]
+[ext_resource type="Script" uid="uid://dot7lrj1gmqy3" path="res://scripts/resource/resource_node.gd" id="1_q6b82"]
+[ext_resource type="Texture2D" uid="uid://dbkserxhef4rt" path="res://assets/word/objects/textura/tree_textura.svg" id="1_rvqxf"]
 [ext_resource type="Resource" uid="uid://co6ebenfso221" path="res://data/resource/objects/wood.tres" id="2_q6b82"]
+[ext_resource type="PackedScene" uid="uid://oepeyalmrjg4" path="res://scenes/world/resource/wood.tscn" id="3_r0bsk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_joqdt"]
 size = Vector2(15, 10)
@@ -14,6 +15,8 @@ resource_item = ExtResource("2_q6b82")
 resource_amount = 2
 hits_required = 3
 energy_cost = 5
+is_pickup = false
+dropped_resource_scene = ExtResource("3_r0bsk")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=515758990]
 texture = ExtResource("1_rvqxf")

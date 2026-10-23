@@ -14,6 +14,7 @@ script = ExtResource("1_pxylb")
 required_tool_id = "hand"
 resource_item = ExtResource("2_acidw")
 energy_cost = 0
+is_pickup = true
 metadata/_custom_type_script = "uid://dot7lrj1gmqy3"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1089982197]

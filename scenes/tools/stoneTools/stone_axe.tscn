@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://q4x0264pxaim"]
 
-[ext_resource type="Script" uid="uid://dot7lrj1gmqy3" path="res://scripts/world/resource_node.gd" id="1_thcyh"]
+[ext_resource type="Script" uid="uid://dot7lrj1gmqy3" path="res://scripts/resource/resource_node.gd" id="1_thcyh"]
 [ext_resource type="Resource" uid="uid://b5qwpyckm3ron" path="res://data/tools/objects/stoneTools/stone_axe.tres" id="2_r4waw"]
-[ext_resource type="Texture2D" uid="uid://dho8pptiehaag" path="res://assets/objects/tool/stone_axe_textura.svg" id="3_64o52"]
+[ext_resource type="Texture2D" uid="uid://dho8pptiehaag" path="res://assets/tools/stoneTools/textura/stone_axe_textura.svg" id="3_64o52"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ggaip"]
 radius = 20.0

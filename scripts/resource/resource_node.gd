@@ -6,6 +6,9 @@ extends StaticBody2D
 @export var resource_amount: int = 1
 @export var hits_required: int = 1
 @export var energy_cost: int = 10
+@export_group("Resource Behavior")
+@export var is_pickup: bool = true
+@export var dropped_resource_scene: PackedScene
 
 var hits_left: int
 
@@ -51,13 +54,42 @@ func get_tool_name() -> String:
 
 func collect_resource(player: Node) -> void:
 	if resource_item == null:
-		player.show_interaction_message("Помилка: не задано предмет ресурсу")
+		player.show_interaction_message(
+			"Помилка: не задано предмет ресурсу"
+		)
 		return
-	if not player.inventory.can_add_item(resource_item):
-		player.show_interaction_message("Інвентар заповнений")
-		hits_left = 1
+	# Підбирання предмета, який уже лежить на землі.
+	if is_pickup:
+		if not player.inventory.can_add_item(resource_item):
+			player.show_interaction_message("Інвентар заповнений")
+			return
+		player.inventory.add_item(resource_item, resource_amount)
+		player.show_interaction_message(
+			"Отримано: %s ×%d" % [
+				resource_item.display_name,
+				resource_amount
+			]
+		)
+		queue_free()
 		return
-	player.inventory.add_item(resource_item, resource_amount)
+	# Добування ресурсу з валуна або дерева.
+	if dropped_resource_scene == null:
+		player.show_interaction_message(
+			"Помилка: не задано сцену випадіння ресурсу"
+		)
+		return
+	var parent := get_parent()
+	if parent == null:
+		return
+	for i in range(resource_amount):
+		var dropped_resource := dropped_resource_scene.instantiate()
+		parent.add_child(dropped_resource)
+		if dropped_resource is Node2D:
+			var offset := Vector2(
+				randf_range(-20.0, 20.0),
+				randf_range(-20.0, 20.0)
+			)
+			dropped_resource.global_position = global_position + offset
 	player.show_interaction_message(
 		"Отримано: %s ×%d" % [
 			resource_item.display_name,
