@@ -136,11 +136,6 @@ func _update_information() -> void:
 
 	crop_name_label.text = "Рослина: %s" % crop.crop_name
 	growth_time_label.text = "Час дозрівання: %d дн." % growth_days
-	#harvest_info_label.text = "Урожай: %d шт. %s\nШанс насіння: %g%%" % [
-		#harvest_amount,
-		#crop.harvest_item_id,
-		#clampf(seed_chance, 0.0, 100.0)
-	#]
 	harvest_info_label.text = "Урожай: %d шт. %s\nШанс отримати насіння: %.0f%% [%s]" % [
 		harvest_amount,
 		crop.crop_name,

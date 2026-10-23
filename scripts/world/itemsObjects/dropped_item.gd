@@ -17,7 +17,14 @@ func setup_item(item: ItemData, item_amount: int) -> void:
 func update_visual() -> void:
 	if item_data == null:
 		return
-	sprite.texture = item_data.icon
+	if amount > 1:
+		sprite.texture = preload(
+			"res://assets/itemsObjects/dropped_item_textura.svg"
+		)
+
+	else:
+		sprite.texture = item_data.icon
+	sprite.scale = Vector2(0.20, 0.20)
 
 func interact() -> void:
 	if item_data == null or amount <= 0:

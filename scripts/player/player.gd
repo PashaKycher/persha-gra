@@ -8,12 +8,13 @@ extends CharacterBody2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var inventory: Inventory = $Inventory
 @onready var crafting_system: CraftingSystem = $CraftingSystem
-@onready var equipment: Equipment = $"../Hud/Equipment"
+@onready var equipment: Equipment = $"../Equipment"
 @onready var hud: CanvasLayer = $"../Hud"
+@onready var cursor_hint: Label = $"../CursorHintLayer/InteractionHint"
 @onready var ground: TileMapLayer = $"../World/Ground"
 @onready var farmable_ground: TileMapLayer = $"../World/FarmableGround"
 @onready var farm_plots: FarmPlots = $"../World/FarmPlots"
-@onready var planting_ui: Control = $"../Hud/PlantingUi"
+@onready var planting_ui: Control = $"../PlanningUILayer/PlantingUi"
 
 var current_hint_target: Node = null
 var is_attacking: bool = false
@@ -54,21 +55,25 @@ func _physics_process(_delta: float) -> void:
 
 func _process(_delta: float) -> void:
 	update_interaction_hint()
-	if Input.is_action_just_pressed("interact"):
-		interact()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			if not event.is_echo():
+				interact()
 
 func interact() -> void:
 	if planting_ui.visible:
 		return
 	if is_attacking:
 		return
-	var target: Node = interaction_detector.get_interactable()
+	var target: Node = interaction_detector.get_target_under_mouse()
 	if target == null:
-		var target_position: Vector2 = (
-			global_position + facing_direction * 16.0
-		)
+		if not interaction_detector.is_mouse_inside():
+			return
+		var mouse_position: Vector2 = get_global_mouse_position()
 		var cell: Vector2i = ground.local_to_map(
-			ground.to_local(target_position)
+		ground.to_local(mouse_position)
 		)
 		if farmable_ground.get_cell_source_id(cell) == -1:
 			show_interaction_message(
@@ -142,17 +147,18 @@ func learn_recipe(recipe: RecipeData) -> bool:
 	learned_recipe_ids.append(recipe_id)
 	return true
 
+
 func update_interaction_hint() -> void:
 	var target: Node = interaction_detector.get_hint_target()
 	if target == null:
 		current_hint_target = null
-		hud.set_interaction_hint("")
+		cursor_hint.hide_hint()
 		return
 	current_hint_target = target
 	if target.has_method("get_interaction_hint"):
-		hud.set_interaction_hint(target.get_interaction_hint())
+		cursor_hint.show_hint(target.get_interaction_hint())
 	else:
-		hud.set_interaction_hint("E: взаємодія")
+		cursor_hint.show_hint("ЛКМ: взаємодія")
 
 func show_interaction_message(message: String) -> void:
 	if hud != null:

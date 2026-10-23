@@ -1,31 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <g>
     <!-- Тінь під скринькою -->
-    <ellipse cx="256" cy="440" rx="200" ry="25" fill="#000000" opacity="0.3" />
+    <ellipse cx="32" cy="56" rx="25" ry="3" fill="#000000" opacity="0.3" />
 
     <!-- Основний корпус скриньки -->
-    <path d="M 96 220 L 416 220 L 416 410 C 416 426, 402 440, 386 440 L 126 440 C 110 440, 96 426, 96 410 Z" fill="#8c5830" stroke="#3b2211" stroke-width="8" stroke-linejoin="round" />
+    <path d="M 12 28 L 52 28 L 52 52 C 52 54, 50 56, 48 56 L 16 56 C 14 56, 12 54, 12 52 Z" fill="#8c5830" stroke="#3b2211" stroke-width="1.5" stroke-linejoin="round" />
 
     <!-- Горизонтальні металеві смуги (обшивка) -->
-    <rect x="96" y="270" width="320" height="24" fill="#525252" stroke="#3b2211" stroke-width="6" />
-    <rect x="96" y="360" width="320" height="24" fill="#525252" stroke="#3b2211" stroke-width="6" />
+    <rect x="12" y="34" width="40" height="4" fill="#525252" stroke="#3b2211" stroke-width="1" />
+    <rect x="12" y="46" width="40" height="4" fill="#525252" stroke="#3b2211" stroke-width="1" />
 
     <!-- Закруглена кришка скриньки -->
-    <path d="M 96 220 C 96 140, 416 140, 416 220 Z" fill="#a66b3c" stroke="#3b2211" stroke-width="8" stroke-linejoin="round" />
+    <path d="M 12 28 C 12 18, 52 18, 52 28 Z" fill="#a66b3c" stroke="#3b2211" stroke-width="1.5" stroke-linejoin="round" />
     
     <!-- Металева окантовка кришки -->
-    <path d="M 96 220 C 96 140, 416 140, 416 220 L 416 232 C 416 156, 96 156, 96 232 Z" fill="#6e6e6e" stroke="#3b2211" stroke-width="6" />
+    <path d="M 12 28 C 12 18, 52 18, 52 28 L 52 30 C 52 20, 12 20, 12 30 Z" fill="#6e6e6e" stroke="#3b2211" stroke-width="1" />
 
     <!-- Замок по центру -->
-    <g transform="translate(236, 210)">
-      <rect x="-20" y="-10" width="40" height="50" rx="6" fill="#d1a13d" stroke="#3b2211" stroke-width="6" />
-      <circle cx="0" cy="15" r="8" fill="#3b2211" />
+    <g transform="translate(32, 27)">
+      <rect x="-3" y="-2" width="6" height="8" rx="1" fill="#d1a13d" stroke="#3b2211" stroke-width="1" />
+      <circle cx="0" cy="2" r="1.5" fill="#3b2211" />
     </g>
 
-    <!-- Заклєпки / болти на металевих смугах -->
-    <circle cx="130" cy="282" r="6" fill="#3b2211" />
-    <circle cx="382" cy="282" r="6" fill="#3b2211" />
-    <circle cx="130" cy="372" r="6" fill="#3b2211" />
-    <circle cx="382" cy="372" r="6" fill="#3b2211" />
+    <!-- Заклепки / болти на металевих смугах -->
+    <circle cx="16" cy="36" r="1" fill="#3b2211" />
+    <circle cx="48" cy="36" r="1" fill="#3b2211" />
+    <circle cx="16" cy="48" r="1" fill="#3b2211" />
+    <circle cx="48" cy="48" r="1" fill="#3b2211" />
   </g>
 </svg>

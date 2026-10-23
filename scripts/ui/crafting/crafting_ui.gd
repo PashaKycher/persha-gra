@@ -9,7 +9,7 @@ extends Panel
 @onready var feedback_timer: Timer = $Timer
 @onready var inventory: Inventory = get_tree().current_scene.get_node("Player/Inventory")
 @onready var crafting_system: CraftingSystem = get_tree().current_scene.get_node("Player/CraftingSystem")
-@onready var inventory_ui: Control = $"../InventoryUI"
+@onready var inventory_ui: Control = $"../../InventoryUILayer/InventoryUI"
 
 var selected_recipe: RecipeData
 

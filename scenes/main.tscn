@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://dbmxnopkq43bh" path="res://scenes/ui/timeHUD/TimeHUD.tscn" id="20_gqmmt"]
 [ext_resource type="Script" uid="uid://pyjmfgjofmq0" path="res://scripts/player/equipment/equipment.gd" id="26_vxglm"]
 [ext_resource type="PackedScene" uid="uid://c7lnbq5l1mrr0" path="res://scenes/ui/planting/PlantingUI.tscn" id="28_5q0nq"]
+[ext_resource type="Script" uid="uid://00fjgwdve24g" path="res://scripts/ui/tooltips/item/hint/interaction_hint.gd" id="34_dgi5k"]
 
 [sub_resource type="GDScript" id="GDScript_tefeu"]
 script/source = "extends Node2D
@@ -248,9 +249,13 @@ scale = Vector2(0.6, 0.6)
 
 [node name="Hud" parent="." unique_id=1032515059 instance=ExtResource("6_tefeu")]
 
-[node name="PlantingUi" parent="Hud" unique_id=863445482 instance=ExtResource("28_5q0nq")]
+[node name="PlanningUILayer" type="CanvasLayer" parent="." unique_id=1984236141]
 
-[node name="CraftingUI" type="Panel" parent="Hud" unique_id=1830975720]
+[node name="PlantingUi" parent="PlanningUILayer" unique_id=863445482 instance=ExtResource("28_5q0nq")]
+
+[node name="CraftingUILayer" type="CanvasLayer" parent="." unique_id=1766752147]
+
+[node name="CraftingUI" type="Panel" parent="CraftingUILayer" unique_id=1830975720]
 offset_left = 263.0
 offset_top = 35.0
 offset_right = 663.0
@@ -258,47 +263,47 @@ offset_bottom = 565.0
 scale = Vector2(0.28, 0.28)
 script = ExtResource("8_tipki")
 
-[node name="Title" type="Label" parent="Hud/CraftingUI" unique_id=118698963]
+[node name="Title" type="Label" parent="CraftingUILayer/CraftingUI" unique_id=118698963]
 layout_mode = 0
 offset_left = 19.999998
 offset_right = 70.0
 offset_bottom = 23.000002
 text = "Крафт"
 
-[node name="RecipeList" type="PanelContainer" parent="Hud/CraftingUI" unique_id=333669604]
+[node name="RecipeList" type="PanelContainer" parent="CraftingUILayer/CraftingUI" unique_id=333669604]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 25.000004
 offset_right = 170.0
 offset_bottom = 245.0
 
-[node name="RecipeButtons" type="VBoxContainer" parent="Hud/CraftingUI/RecipeList" unique_id=325053399]
+[node name="RecipeButtons" type="VBoxContainer" parent="CraftingUILayer/CraftingUI/RecipeList" unique_id=325053399]
 layout_mode = 2
 
-[node name="RecipeDetails" type="PanelContainer" parent="Hud/CraftingUI" unique_id=796925670]
+[node name="RecipeDetails" type="PanelContainer" parent="CraftingUILayer/CraftingUI" unique_id=796925670]
 layout_mode = 0
 offset_left = 200.0
 offset_top = 25.000004
 offset_right = 390.0
 offset_bottom = 267.0
 
-[node name="DetailsContent" type="VBoxContainer" parent="Hud/CraftingUI/RecipeDetails" unique_id=2043506876]
+[node name="DetailsContent" type="VBoxContainer" parent="CraftingUILayer/CraftingUI/RecipeDetails" unique_id=2043506876]
 layout_mode = 2
 
-[node name="RecipeName" type="Label" parent="Hud/CraftingUI/RecipeDetails/DetailsContent" unique_id=1432266224]
+[node name="RecipeName" type="Label" parent="CraftingUILayer/CraftingUI/RecipeDetails/DetailsContent" unique_id=1432266224]
 layout_mode = 2
 
-[node name="Ingredients" type="Label" parent="Hud/CraftingUI/RecipeDetails/DetailsContent" unique_id=2030779307]
+[node name="Ingredients" type="Label" parent="CraftingUILayer/CraftingUI/RecipeDetails/DetailsContent" unique_id=2030779307]
 layout_mode = 2
 
-[node name="Result" type="Label" parent="Hud/CraftingUI/RecipeDetails/DetailsContent" unique_id=968716143]
+[node name="Result" type="Label" parent="CraftingUILayer/CraftingUI/RecipeDetails/DetailsContent" unique_id=968716143]
 layout_mode = 2
 
-[node name="CraftButton" type="Button" parent="Hud/CraftingUI/RecipeDetails/DetailsContent" unique_id=1167864604]
+[node name="CraftButton" type="Button" parent="CraftingUILayer/CraftingUI/RecipeDetails/DetailsContent" unique_id=1167864604]
 layout_mode = 2
 text = "СТВОРИТИ"
 
-[node name="CraftFeedback" type="Label" parent="Hud/CraftingUI" unique_id=1946491475]
+[node name="CraftFeedback" type="Label" parent="CraftingUILayer/CraftingUI" unique_id=1946491475]
 layout_mode = 0
 offset_left = 92.857185
 offset_right = 132.85718
@@ -306,11 +311,13 @@ offset_bottom = 23.0
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="Timer" type="Timer" parent="Hud/CraftingUI" unique_id=1868875198]
+[node name="Timer" type="Timer" parent="CraftingUILayer/CraftingUI" unique_id=1868875198]
 wait_time = 2.0
 one_shot = true
 
-[node name="InventoryUI" parent="Hud" unique_id=764993060 instance=ExtResource("1_o6xl0")]
+[node name="InventoryUILayer" type="CanvasLayer" parent="." unique_id=2055908428]
+
+[node name="InventoryUI" parent="InventoryUILayer" unique_id=764993060 instance=ExtResource("1_o6xl0")]
 process_mode = 3
 offset_left = 10.0
 offset_top = 35.0
@@ -319,10 +326,23 @@ offset_bottom = 35.0
 mouse_filter = 2
 tooltip_offset = Vector2(2, 0)
 
-[node name="RecipeScrollTooltip" parent="Hud/InventoryUI" unique_id=227588942 instance=ExtResource("17_0ld40")]
+[node name="RecipeScrollTooltip" parent="InventoryUILayer/InventoryUI" unique_id=227588942 instance=ExtResource("17_0ld40")]
 layout_mode = 0
 
-[node name="Equipment" type="Node" parent="Hud" unique_id=662069587]
+[node name="Equipment" type="Node" parent="." unique_id=662069587]
 script = ExtResource("26_vxglm")
 
 [node name="TimeHud" parent="." unique_id=496960627 instance=ExtResource("20_gqmmt")]
+
+[node name="CursorHintLayer" type="CanvasLayer" parent="." unique_id=1074019368]
+layer = 10
+scale = Vector2(0.2, 0.2)
+transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
+
+[node name="InteractionHint" type="Label" parent="CursorHintLayer" unique_id=2098273162]
+visible = false
+z_index = 1
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("34_dgi5k")
+cursor_offset = Vector2(10, 10)

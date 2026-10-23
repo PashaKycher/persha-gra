@@ -16,6 +16,7 @@ var context_source: String = ""
 var context_equipment_index: int = -1
 var recipe_scroll_tooltip: Control
 var recipe_scroll_learn_window: RecipeScrollLearnWindow
+var dropped_item_counter: int = 0
 const RECIPE_SCROLL_TOOLTIP_SCENE: PackedScene = preload(
     "res://scenes/ui/tooltips/RecipeScrollTooltip.tscn"
 	
@@ -320,13 +321,20 @@ func execute_item_action(action: String, selected_amount: int) -> void:
 func drop_item(item: ItemData, selected_amount: int) -> void:
 	if item == null or selected_amount <= 0:
 		return
-	# Спочатку створюємо предмет на землі.
+	# Створюємо предмет на землі.
 	var dropped_item = DROPPED_ITEM_SCENE.instantiate()
 	dropped_item.setup_item(item, selected_amount)
 	var world := get_tree().current_scene
 	world.add_child(dropped_item)
-	# Поки що викидаємо праворуч від гравця.
-	dropped_item.global_position = player.global_position + Vector2(24, 0)
+	# Розміщуємо предмети навколо персонажа по черзі.
+	var angle: float = dropped_item_counter * deg_to_rad(45.0)
+	var distance: float = 18.0
+	var offset := Vector2(
+		cos(angle),
+		sin(angle)
+	) * distance
+	dropped_item.global_position = player.global_position + offset
+	dropped_item_counter += 1
 	# Вилучаємо предмет з інвентаря.
 	if player.inventory.remove_item(item.id, selected_amount):
 		refresh_inventory()
@@ -372,7 +380,7 @@ func _on_recipe_scroll_learned(scroll: RecipeScrollData) -> void:
 		player.inventory.remove_item(scroll.id, 1)
 		refresh_inventory()
 		var crafting_ui := get_tree().current_scene.get_node_or_null(
-			"Hud/CraftingUI"
+			"CraftingUILayer/CraftingUI"
 		)
 		if crafting_ui:
 			crafting_ui.update_recipe_list()
