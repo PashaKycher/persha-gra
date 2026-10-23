@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="FertilizerData" format=3 uid="uid://ckr4f5jq1nm24"]
+
+[ext_resource type="Script" uid="uid://chcojketasc07" path="res://scripts/world/farming/fertilizer_data.gd" id="1_274t0"]
+
+[resource]
+script = ExtResource("1_274t0")
+id = &"growth_fertilizer"
+fertilizer_name = "Добриво росту"
+metadata/_custom_type_script = "uid://chcojketasc07"

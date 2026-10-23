@@ -2,30 +2,37 @@
 
 [ext_resource type="Script" uid="uid://div1oouu5n572" path="res://scripts/systems/time/day_night_lighting.gd" id="1_jscy8"]
 [ext_resource type="PackedScene" uid="uid://u7ceubr04yn7" path="res://scenes/player/player.tscn" id="1_o5qli"]
-[ext_resource type="PackedScene" uid="uid://b7jdw2eeypirc" path="res://ui/inventory/inventory.tscn" id="1_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://b7jdw2eeypirc" path="res://scenes/ui/inventory/inventory.tscn" id="1_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://bt4mbeg8dpbsp" path="res://assets/tiles/tilesheet.svg" id="2_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://bgh3nqwgji0dg" path="res://scenes/items/recipeScroll.tscn" id="2_jkv2x"]
-[ext_resource type="PackedScene" uid="uid://cihuwxe1la73g" path="res://scenes/world/objects/branch.tscn" id="2_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://bgh3nqwgji0dg" path="res://scenes/itemsObjects/recipeScroll.tscn" id="2_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://cihuwxe1la73g" path="res://scenes/world/resource/branch.tscn" id="2_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://ec4unnj775df" path="res://scenes/world/objects/tree.tscn" id="2_sugp2"]
-[ext_resource type="PackedScene" uid="uid://c5ai24a0435nw" path="res://scenes/world/objects/sleepSpot.tscn" id="2_yc10j"]
-[ext_resource type="PackedScene" uid="uid://ua75dyljn35f" path="res://scenes/world/objects/stone.tscn" id="3_85g3d"]
-[ext_resource type="Resource" uid="uid://duu2wfm1y58un" path="res://data/items/scroll/stone_pickaxe_scroll.tres" id="3_dp3eg"]
-[ext_resource type="Script" uid="uid://d3bvcgwa6gdsl" path="res://scripts/world/farming/farm_plots.gd" id="3_og1vs"]
+[ext_resource type="PackedScene" uid="uid://c5ai24a0435nw" path="res://scenes/world/stuff/sleepSpot.tscn" id="2_yc10j"]
+[ext_resource type="PackedScene" uid="uid://ua75dyljn35f" path="res://scenes/world/resource/stone.tscn" id="3_85g3d"]
+[ext_resource type="Resource" uid="uid://duu2wfm1y58un" path="res://data/recipes/objects/stone_pickaxe_scroll.tres" id="3_dp3eg"]
+[ext_resource type="Script" uid="uid://d3bvcgwa6gdsl" path="res://scripts/farming/farm_plots.gd" id="3_og1vs"]
 [ext_resource type="PackedScene" uid="uid://c8o3yoq1v0o04" path="res://scenes/world/objects/boulder.tscn" id="3_tefeu"]
-[ext_resource type="Resource" uid="uid://kfltgj647gyr" path="res://data/items/scroll/stone_hammer_scroll.tres" id="4_0ld40"]
-[ext_resource type="Resource" uid="uid://dtvahdemnmlmn" path="res://data/items/scroll/stone_axe_scroll.tres" id="5_gqmmt"]
-[ext_resource type="PackedScene" uid="uid://xcgqladigf1u" path="res://ui/hud/HUD.tscn" id="6_tefeu"]
-[ext_resource type="PackedScene" uid="uid://q4x0264pxaim" path="res://scenes/tools/stone_axe.tscn" id="6_trceg"]
-[ext_resource type="PackedScene" uid="uid://68iwx0dda00r" path="res://scenes/tools/stone_hammer.tscn" id="7_a8y0u"]
-[ext_resource type="PackedScene" uid="uid://crfrxjvs5ac4o" path="res://scenes/tools/stone_knife.tscn" id="8_jkv2x"]
-[ext_resource type="Script" uid="uid://dwj1tu0bctvmr" path="res://scripts/crafting/crafting_ui.gd" id="8_tipki"]
-[ext_resource type="Resource" uid="uid://oeata75jqpc5" path="res://data/items/scroll/stone_hoe_scroll.tres" id="8_y6deb"]
-[ext_resource type="PackedScene" uid="uid://elwio22gwq2b" path="res://scenes/tools/stone_pickaxe.tscn" id="9_jbj1t"]
-[ext_resource type="PackedScene" uid="uid://u26wef0yci0j" path="res://scenes/world/objects/seed.tscn" id="10_2wyq8"]
-[ext_resource type="Script" uid="uid://deintna80kyhs" path="res://scripts/player/equipment.gd" id="14_a8y0u"]
-[ext_resource type="PackedScene" uid="uid://ct3kr80fegs6x" path="res://scenes/tools/stone_hoe.tscn" id="16_pm3ni"]
-[ext_resource type="PackedScene" uid="uid://dtadtfbefu30r" path="res://ui/tooltips/RecipeScrollTooltip.tscn" id="17_0ld40"]
-[ext_resource type="PackedScene" uid="uid://dbmxnopkq43bh" path="res://ui/time/TimeHUD.tscn" id="20_gqmmt"]
+[ext_resource type="Resource" uid="uid://kfltgj647gyr" path="res://data/recipes/objects/stone_hammer_scroll.tres" id="4_0ld40"]
+[ext_resource type="Resource" uid="uid://dtvahdemnmlmn" path="res://data/recipes/objects/stone_axe_scroll.tres" id="5_gqmmt"]
+[ext_resource type="PackedScene" uid="uid://xcgqladigf1u" path="res://scenes/ui/hud/HUD.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://q4x0264pxaim" path="res://scenes/tools/stoneTools/stone_axe.tscn" id="6_trceg"]
+[ext_resource type="PackedScene" uid="uid://68iwx0dda00r" path="res://scenes/tools/stoneTools/stone_hammer.tscn" id="7_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://crfrxjvs5ac4o" path="res://scenes/tools/stoneTools/stone_knife.tscn" id="8_jkv2x"]
+[ext_resource type="Script" uid="uid://dwj1tu0bctvmr" path="res://scripts/ui/crafting/crafting_ui.gd" id="8_tipki"]
+[ext_resource type="Resource" uid="uid://oeata75jqpc5" path="res://data/recipes/objects/stone_hoe_scroll.tres" id="8_y6deb"]
+[ext_resource type="PackedScene" uid="uid://elwio22gwq2b" path="res://scenes/tools/stoneTools/stone_pickaxe.tscn" id="9_jbj1t"]
+[ext_resource type="PackedScene" uid="uid://u26wef0yci0j" path="res://scenes/itemsObjects/seedFarming.tscn" id="10_2wyq8"]
+[ext_resource type="Resource" uid="uid://cdslbaiulcu1e" path="res://data/farming/objects/seed/tomato_seed.tres" id="11_2f3dj"]
+[ext_resource type="PackedScene" uid="uid://dn6f8vgdmss6i" path="res://scenes/farming/fertilizer/growthFertilizer.tscn" id="12_qkpxi"]
+[ext_resource type="PackedScene" uid="uid://oepeyalmrjg4" path="res://scenes/world/resource/wood.tscn" id="12_vxglm"]
+[ext_resource type="PackedScene" uid="uid://cnwsbjuhxld7a" path="res://scenes/farming/fertilizer/yieldFertilizer.tscn" id="13_5q0nq"]
+[ext_resource type="PackedScene" uid="uid://douevyqjhrafv" path="res://scenes/farming/resource/Tomato.tscn" id="14_dgi5k"]
+[ext_resource type="PackedScene" uid="uid://1fqql3rrqgva" path="res://scenes/farming/resource/Turnip.tscn" id="15_j8jky"]
+[ext_resource type="PackedScene" uid="uid://ct3kr80fegs6x" path="res://scenes/tools/stoneTools/stone_hoe.tscn" id="16_pm3ni"]
+[ext_resource type="PackedScene" uid="uid://dtadtfbefu30r" path="res://scenes/ui/tooltips/RecipeScrollTooltip.tscn" id="17_0ld40"]
+[ext_resource type="PackedScene" uid="uid://dbmxnopkq43bh" path="res://scenes/ui/timeHUD/TimeHUD.tscn" id="20_gqmmt"]
+[ext_resource type="Script" uid="uid://pyjmfgjofmq0" path="res://scripts/player/equipment/equipment.gd" id="26_vxglm"]
+[ext_resource type="PackedScene" uid="uid://c7lnbq5l1mrr0" path="res://scenes/ui/planting/PlantingUI.tscn" id="28_5q0nq"]
 
 [sub_resource type="GDScript" id="GDScript_tefeu"]
 script/source = "extends Node2D
@@ -124,21 +131,51 @@ position = Vector2(486, 256)
 resource_item = ExtResource("8_y6deb")
 
 [node name="Seed" parent="World" unique_id=1151347826 instance=ExtResource("10_2wyq8")]
-position = Vector2(490.99997, 356)
+position = Vector2(525.99994, 311)
 
 [node name="Seed2" parent="World" unique_id=336788703 instance=ExtResource("10_2wyq8")]
-position = Vector2(516, 352)
+position = Vector2(526, 325)
 
 [node name="Seed3" parent="World" unique_id=934602955 instance=ExtResource("10_2wyq8")]
-position = Vector2(548.00006, 332)
+position = Vector2(526, 339)
 
-[node name="Seed4" parent="World" unique_id=121391017 instance=ExtResource("10_2wyq8")]
-position = Vector2(507.00006, 384)
+[node name="Seed4" parent="World" unique_id=1769778676 instance=ExtResource("10_2wyq8")]
+position = Vector2(556.99994, 338.00003)
+resource_item = ExtResource("11_2f3dj")
 
-[node name="Seed5" parent="World" unique_id=532708606 instance=ExtResource("10_2wyq8")]
-position = Vector2(545.00006, 364)
+[node name="Seed5" parent="World" unique_id=1230158827 instance=ExtResource("10_2wyq8")]
+position = Vector2(557, 324.00003)
+resource_item = ExtResource("11_2f3dj")
 
-[node name="Branch" parent="World" unique_id=1720985940 instance=ExtResource("2_o6xl0")]
+[node name="Seed6" parent="World" unique_id=646989698 instance=ExtResource("10_2wyq8")]
+position = Vector2(556, 310.00003)
+resource_item = ExtResource("11_2f3dj")
+
+[node name="GrowthFertilizer" parent="World" unique_id=1720985940 instance=ExtResource("12_qkpxi")]
+position = Vector2(462, 345)
+
+[node name="GrowthFertilizer2" parent="World" unique_id=589417348 instance=ExtResource("12_qkpxi")]
+position = Vector2(471, 345)
+
+[node name="YieldFertilizer" parent="World" unique_id=138803810 instance=ExtResource("13_5q0nq")]
+position = Vector2(470, 311)
+
+[node name="YieldFertilizer2" parent="World" unique_id=148081480 instance=ExtResource("13_5q0nq")]
+position = Vector2(462, 311)
+
+[node name="Tomato" parent="World" unique_id=1943525335 instance=ExtResource("14_dgi5k")]
+position = Vector2(517, 241)
+
+[node name="Tomato2" parent="World" unique_id=1124124294 instance=ExtResource("14_dgi5k")]
+position = Vector2(517, 252)
+
+[node name="Turnip" parent="World" unique_id=1104043589 instance=ExtResource("15_j8jky")]
+position = Vector2(555, 251)
+
+[node name="Turnip2" parent="World" unique_id=562407024 instance=ExtResource("15_j8jky")]
+position = Vector2(554, 241.00002)
+
+[node name="Branch" parent="World" unique_id=275563881 instance=ExtResource("2_o6xl0")]
 position = Vector2(590, 208)
 
 [node name="Branch2" parent="World" unique_id=1865749077 instance=ExtResource("2_o6xl0")]
@@ -156,7 +193,10 @@ position = Vector2(605, 209)
 [node name="Branch6" parent="World" unique_id=350206813 instance=ExtResource("2_o6xl0")]
 position = Vector2(612, 210)
 
-[node name="Stone" parent="World" unique_id=1366884939 instance=ExtResource("3_85g3d")]
+[node name="Wood" parent="World" unique_id=1366884939 instance=ExtResource("12_vxglm")]
+position = Vector2(541, 272)
+
+[node name="Stone" parent="World" unique_id=1746629465 instance=ExtResource("3_85g3d")]
 position = Vector2(685, 266)
 
 [node name="Stone2" parent="World" unique_id=1881541060 instance=ExtResource("3_85g3d")]
@@ -207,6 +247,8 @@ position = Vector2(500, 300)
 scale = Vector2(0.6, 0.6)
 
 [node name="Hud" parent="." unique_id=1032515059 instance=ExtResource("6_tefeu")]
+
+[node name="PlantingUi" parent="Hud" unique_id=863445482 instance=ExtResource("28_5q0nq")]
 
 [node name="CraftingUI" type="Panel" parent="Hud" unique_id=1830975720]
 offset_left = 263.0
@@ -281,6 +323,6 @@ tooltip_offset = Vector2(2, 0)
 layout_mode = 0
 
 [node name="Equipment" type="Node" parent="Hud" unique_id=662069587]
-script = ExtResource("14_a8y0u")
+script = ExtResource("26_vxglm")
 
 [node name="TimeHud" parent="." unique_id=496960627 instance=ExtResource("20_gqmmt")]

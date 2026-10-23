@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CropData" format=3 uid="uid://dc88bk81vhn08"]
+
+[ext_resource type="Script" uid="uid://tuosw3w1c650" path="res://scripts/farming/crop_data.gd" id="1_80aiy"]
+
+[resource]
+script = ExtResource("1_80aiy")
+id = &"turnip"
+crop_name = "Ріпа"
+seed_item_id = "turnip_seed"
+harvest_item_id = "turnip"
+metadata/_custom_type_script = "uid://tuosw3w1c650"

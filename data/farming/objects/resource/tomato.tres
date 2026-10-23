@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bje44rc8sveuj"]
+
+[ext_resource type="Texture2D" uid="uid://fikh6pfb8e46" path="res://assets/farming/recource/icon/tomato_icon.svg" id="1_2aus5"]
+[ext_resource type="Script" uid="uid://dipuet8c4utmg" path="res://scripts/items/item_data.gd" id="2_crqun"]
+
+[resource]
+script = ExtResource("2_crqun")
+id = "tomato"
+display_name = "Помідор"
+icon = ExtResource("1_2aus5")
+metadata/_custom_type_script = "uid://dipuet8c4utmg"

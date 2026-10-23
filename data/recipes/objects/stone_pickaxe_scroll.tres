@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RecipeScrollData" format=3 uid="uid://duu2wfm1y58un"]
+
+[ext_resource type="Texture2D" uid="uid://2o0fivgaa5vj" path="res://assets/icons/objects/scroll_item_icon.svg" id="1_tmtj5"]
+[ext_resource type="Resource" uid="uid://6o75jkb1bes8" path="res://data/recipes/data/tool/stone_pickaxe_recipe.tres" id="2_tmtj5"]
+[ext_resource type="Script" uid="uid://bgwqsw73vlcsa" path="res://scripts/items/recipe_scroll_data.gd" id="3_lxm1q"]
+
+[resource]
+script = ExtResource("3_lxm1q")
+recipe = ExtResource("2_tmtj5")
+id = "stone_pickaxe_scroll"
+display_name = "Сувій: кам'яна кірка"
+max_stack = 1
+icon = ExtResource("1_tmtj5")
+metadata/_custom_type_script = "uid://bgwqsw73vlcsa"

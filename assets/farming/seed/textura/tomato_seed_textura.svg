@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="100%" height="100%">
+  <!-- Задний фон листочка / семечка -->
+  <path d="M32 6 C20 18, 12 30, 16 44 C19 54, 32 60, 32 60 C32 60, 45 54, 48 44 C52 30, 44 18, 32 6 Z" fill="#8cb369" stroke="#588157" stroke-width="2" stroke-linejoin="round" />
+  
+  <!-- Прожилки (текстура семечки/листа) -->
+  <path d="M32 16 Q32 38, 32 56" fill="none" stroke="#f4f1de" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M32 26 L22 34" fill="none" stroke="#f4f1de" stroke-width="2" stroke-linecap="round" />
+  <path d="M32 34 L42 42" fill="none" stroke="#f4f1de" stroke-width="2" stroke-linecap="round" />
+  <path d="M32 42 L24 48" fill="none" stroke="#f4f1de" stroke-width="2" stroke-linecap="round" />
+</svg>

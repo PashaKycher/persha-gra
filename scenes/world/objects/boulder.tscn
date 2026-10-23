@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c8o3yoq1v0o04"]
 
 [ext_resource type="Script" uid="uid://dot7lrj1gmqy3" path="res://scripts/world/resource_node.gd" id="1_eg8lp"]
-[ext_resource type="Resource" uid="uid://b0yp3nshcyd23" path="res://data/items/objects/stone.tres" id="2_84s6y"]
+[ext_resource type="Resource" uid="uid://b0yp3nshcyd23" path="res://data/resource/objects/stone.tres" id="2_84s6y"]
 [ext_resource type="Texture2D" uid="uid://bjcxf4uj88jfu" path="res://assets/objects/objects/boulder_textura.svg" id="2_eg8lp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6strp"]
@@ -14,6 +14,7 @@ required_tool_id = "pickaxe"
 resource_item = ExtResource("2_84s6y")
 resource_amount = 3
 hits_required = 4
+energy_cost = 4
 metadata/_custom_type_script = "uid://dot7lrj1gmqy3"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=714173776]

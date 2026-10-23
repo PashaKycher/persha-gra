@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://c7lnbq5l1mrr0"]
+
+[ext_resource type="Script" uid="uid://dmd48wjoqjlb5" path="res://scripts/ui/planting/planting_ui.gd" id="1_v3qed"]
+
+[node name="PlantingUi" type="Control" unique_id=863445482]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_v3qed")
+
+[node name="Panel" type="Panel" parent="." unique_id=382651625]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 263.3333
+offset_right = 866.6666
+offset_bottom = 486.66666
+
+[node name="MainLayout" type="HBoxContainer" parent="Panel" unique_id=1901064120]
+layout_mode = 0
+offset_right = 430.0
+offset_bottom = 132.0
+
+[node name="IngredientsPanel" type="VBoxContainer" parent="Panel/MainLayout" unique_id=122858920]
+layout_mode = 2
+
+[node name="SeedOption" type="OptionButton" parent="Panel/MainLayout/IngredientsPanel" unique_id=359084646]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="FertilizerOption" type="OptionButton" parent="Panel/MainLayout/IngredientsPanel" unique_id=177987469]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="InfoPanel" type="VBoxContainer" parent="Panel/MainLayout" unique_id=2064306457]
+layout_mode = 2
+
+[node name="CropName" type="Label" parent="Panel/MainLayout/InfoPanel" unique_id=1006299636]
+layout_mode = 2
+
+[node name="GrowthTime" type="Label" parent="Panel/MainLayout/InfoPanel" unique_id=1812275027]
+layout_mode = 2
+
+[node name="HarvestInfo" type="Label" parent="Panel/MainLayout/InfoPanel" unique_id=1723732737]
+layout_mode = 2
+
+[node name="BonusInfo" type="Label" parent="Panel/MainLayout/InfoPanel" unique_id=1764647066]
+layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="Panel" unique_id=2035762543]
+custom_minimum_size = Vector2(0, 35)
+custom_maximum_size = Vector2(-1, 35)
+layout_mode = 0
+offset_left = 113.33333
+offset_top = 160.0
+offset_right = 317.3333
+offset_bottom = 195.0
+alignment = 1
+
+[node name="ConfirmButton" type="Button" parent="Panel/Buttons" unique_id=1171996459]
+custom_minimum_size = Vector2(100, 35)
+custom_maximum_size = Vector2(100, 35)
+layout_mode = 2
+text = "+"
+
+[node name="CancelButton" type="Button" parent="Panel/Buttons" unique_id=2016314061]
+custom_minimum_size = Vector2(100, 35)
+custom_maximum_size = Vector2(100, 35)
+layout_mode = 2
+text = "х"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RecipeScrollData" format=3 uid="uid://oeata75jqpc5"]
+
+[ext_resource type="Texture2D" uid="uid://2o0fivgaa5vj" path="res://assets/icons/objects/scroll_item_icon.svg" id="1_al3eq"]
+[ext_resource type="Script" uid="uid://bgwqsw73vlcsa" path="res://scripts/items/recipe_scroll_data.gd" id="1_ftivr"]
+[ext_resource type="Resource" uid="uid://b3sn4sfrfdc6v" path="res://data/recipes/data/tool/stone_hoe_recipe.tres" id="2_q3xc5"]
+
+[resource]
+script = ExtResource("1_ftivr")
+recipe = ExtResource("2_q3xc5")
+id = "stone_hoe_scroll"
+display_name = "Комʼяна матика"
+max_stack = 1
+icon = ExtResource("1_al3eq")
+metadata/_custom_type_script = "uid://bgwqsw73vlcsa"

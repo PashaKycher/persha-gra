@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Мішечок з добривом -->
+  <path d="M20 20 C18 16, 22 12, 32 12 C42 12, 46 16, 44 20 Z" fill="#bfa181" stroke="#8c6d53" stroke-width="2" />
+  <path d="M16 22 C14 22, 12 26, 14 32 C16 46, 22 56, 32 56 C42 56, 48 46, 50 32 C52 26, 50 22, 48 22 Z" fill="#dfc29f" stroke="#8c6d53" stroke-width="2.5" />
+  
+  <!-- Мотузка -->
+  <path d="M15 22 Q32 27, 49 22" fill="none" stroke="#6b4f3a" stroke-width="3" stroke-linecap="round" />
+  
+  <!-- Зелена стрілка вгору (символ росту) -->
+  <path d="M32 46 L32 30 M32 30 L26 36 M32 30 L38 36" fill="none" stroke="#4d7c0f" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

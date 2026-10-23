@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dmo5jn11xqylb"]
+
+[ext_resource type="Script" uid="uid://dipuet8c4utmg" path="res://scripts/items/item_data.gd" id="1_hk8w7"]
+[ext_resource type="Texture2D" uid="uid://lrbhsqsd8x3p" path="res://assets/farming/recource/icon/turnip_icon.svg" id="1_uh4ep"]
+
+[resource]
+script = ExtResource("1_hk8w7")
+id = "turnip"
+display_name = "Ріпа"
+icon = ExtResource("1_uh4ep")
+metadata/_custom_type_script = "uid://dipuet8c4utmg"

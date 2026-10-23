@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="FertilizerData" format=3 uid="uid://csn884o30ffvi"]
+
+[ext_resource type="Script" uid="uid://chcojketasc07" path="res://scripts/world/farming/fertilizer_data.gd" id="1_wvold"]
+
+[resource]
+script = ExtResource("1_wvold")
+id = &"yield_fertilizer"
+fertilizer_name = "Добриво врожайності"
+effect_type = 1
+metadata/_custom_type_script = "uid://chcojketasc07"

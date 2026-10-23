@@ -13,6 +13,7 @@ extends CharacterBody2D
 @onready var ground: TileMapLayer = $"../World/Ground"
 @onready var farmable_ground: TileMapLayer = $"../World/FarmableGround"
 @onready var farm_plots: FarmPlots = $"../World/FarmPlots"
+@onready var planting_ui: Control = $"../Hud/PlantingUi"
 
 var current_hint_target: Node = null
 var is_attacking: bool = false
@@ -20,7 +21,6 @@ var pending_interaction_target: Node = null
 var facing_direction: Vector2 = Vector2.UP
 var pending_farm_action: bool = false
 var pending_farm_cell: Vector2i = Vector2i.ZERO
-var pending_plant_action: bool = false
 # Енергія 
 var energy: int = 1 
 # Рецепти, які гравець уже вивчив
@@ -40,8 +40,8 @@ func _physics_process(_delta: float) -> void:
 		"move_left",
 		"move_right",
 		"move_up",
-    	"move_down"
-)
+		"move_down"
+	)
 	if direction != Vector2.ZERO:
 		if abs(direction.x) > abs(direction.y):
 			facing_direction = Vector2.RIGHT if direction.x > 0 else Vector2.LEFT
@@ -58,6 +58,8 @@ func _process(_delta: float) -> void:
 		interact()
 
 func interact() -> void:
+	if planting_ui.visible:
+		return
 	if is_attacking:
 		return
 	var target: Node = interaction_detector.get_interactable()
@@ -77,13 +79,10 @@ func interact() -> void:
 			return
 		# Якщо земля вже оброблена, перевіряємо посадку.
 		if farm_plots.tilled_cells.has(cell):
-			if not farm_plots.can_plant_seed(cell, self):
+			if farm_plots.planted_cells.has(cell):
+				show_interaction_message("Тут уже росте рослина.")
 				return
-			pending_farm_action = false
-			pending_plant_action = true
-			pending_farm_cell = cell
-			pending_interaction_target = null
-			play_slash_animation()
+			planting_ui.open_for_cell(cell, self, farm_plots)
 			return
 		# Перевірки для обробки землі.
 		if not equipment.is_tool_type_equipped(&"hoe"):
@@ -104,7 +103,6 @@ func interact() -> void:
 			show_interaction_message("Недостатньо енергії.")
 			return
 		pending_farm_action = true
-		pending_plant_action = false
 		pending_farm_cell = cell
 		pending_interaction_target = null
 		play_slash_animation()
@@ -117,7 +115,6 @@ func interact() -> void:
 		if hint == "Інвентар заповнений":
 			return
 	pending_farm_action = false
-	pending_plant_action = false
 	pending_interaction_target = target
 	play_slash_animation()
 
@@ -239,10 +236,6 @@ func _on_animation_finished() -> void:
 	is_attacking = false
 	var target: Node = pending_interaction_target
 	pending_interaction_target = null
-	if pending_plant_action:
-		pending_plant_action = false
-		farm_plots.plant_seed(pending_farm_cell, self)
-		return
 	if pending_farm_action:
 		pending_farm_action = false
 		farm_plots.till_cell(pending_farm_cell, self)

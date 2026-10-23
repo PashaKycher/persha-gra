@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Мішечок із золотистим добривом -->
+  <path d="M20 20 C18 16, 22 12, 32 12 C42 12, 46 16, 44 20 Z" fill="#bfa181" stroke="#8c6d53" stroke-width="2" />
+  <path d="M16 22 C14 22, 12 26, 14 32 C16 46, 22 56, 32 56 C42 56, 48 46, 50 32 C52 26, 50 22, 48 22 Z" fill="#e3d09e" stroke="#8c6d53" stroke-width="2.5" />
+  
+  <!-- Мотузка -->
+  <path d="M15 22 Q32 27, 49 22" fill="none" stroke="#6b4f3a" stroke-width="3" stroke-linecap="round" />
+  
+  <!-- Зірочки / Іскри (символ більшого врожаю/якості) -->
+  <path d="M32 30 L34 36 L40 38 L34 40 L32 46 L30 40 L24 38 L30 36 Z" fill="#ca8a04" stroke="#a16207" stroke-width="1.5" stroke-linejoin="round" />
+</svg>

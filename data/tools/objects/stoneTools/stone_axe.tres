@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b5qwpyckm3ron"]
+
+[ext_resource type="Script" uid="uid://dipuet8c4utmg" path="res://scripts/items/item_data.gd" id="1_0mi3u"]
+[ext_resource type="Texture2D" uid="uid://bomv8e317433k" path="res://assets/icons/tool/stone_axe_icon.svg" id="1_h3od7"]
+[ext_resource type="Resource" uid="uid://bngklyquv5fb2" path="res://data/tools/data/stoneTools/stone_axe_tool.tres" id="3_u1swu"]
+
+[resource]
+script = ExtResource("1_0mi3u")
+id = "stone_axe"
+display_name = "Кам'яна сокира"
+max_stack = 1
+icon = ExtResource("1_h3od7")
+tool_data = ExtResource("3_u1swu")
+metadata/_custom_type_script = "uid://dipuet8c4utmg"

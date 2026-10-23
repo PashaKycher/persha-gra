@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cdslbaiulcu1e"]
+
+[ext_resource type="Resource" uid="uid://bs3ho1vwc85u2" path="res://data/farming/data/resource/tomato.tres" id="1_jc3bg"]
+[ext_resource type="Texture2D" uid="uid://c25dlf0t2mj7h" path="res://assets/farming/seed/textura/tomato_seed_textura.svg" id="2_jc3bg"]
+[ext_resource type="Script" uid="uid://dipuet8c4utmg" path="res://scripts/items/item_data.gd" id="3_4g1pb"]
+
+[resource]
+script = ExtResource("3_4g1pb")
+id = "tomato_seed"
+display_name = "Насіння помідора"
+icon = ExtResource("2_jc3bg")
+crop_data = ExtResource("1_jc3bg")
+metadata/_custom_type_script = "uid://dipuet8c4utmg"

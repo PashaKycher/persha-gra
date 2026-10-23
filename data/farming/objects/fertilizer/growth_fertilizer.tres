@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://wabxs0da6vlb"]
+
+[ext_resource type="Resource" uid="uid://ckr4f5jq1nm24" path="res://data/farming/data/fertilizer/growth_fertilizer.tres" id="1_b45oa"]
+[ext_resource type="Script" uid="uid://dipuet8c4utmg" path="res://scripts/items/item_data.gd" id="1_xoq53"]
+[ext_resource type="Texture2D" uid="uid://w5u4jf4qwdts" path="res://assets/farming/fertilizer/icon/growth_fertilizer_icon.svg" id="2_ri5fq"]
+
+[resource]
+script = ExtResource("1_xoq53")
+id = "growth_fertilizer"
+display_name = "Добриво росту"
+icon = ExtResource("2_ri5fq")
+fertilizer_data = ExtResource("1_b45oa")
+metadata/_custom_type_script = "uid://dipuet8c4utmg"

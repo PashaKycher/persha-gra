@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cw0fbkw1nc3ql"]
+
+[ext_resource type="Script" uid="uid://dipuet8c4utmg" path="res://scripts/items/item_data.gd" id="1_0vqd6"]
+[ext_resource type="Resource" uid="uid://csn884o30ffvi" path="res://data/farming/data/fertilizer/yield_fertilizer.tres" id="1_rfikm"]
+[ext_resource type="Texture2D" uid="uid://wkv4q21v8f7j" path="res://assets/farming/fertilizer/icon/yield_fertilizer_icon.svg" id="2_sg8nn"]
+
+[resource]
+script = ExtResource("1_0vqd6")
+id = "yield_fertilizer"
+display_name = "Добриво врожайності"
+icon = ExtResource("2_sg8nn")
+fertilizer_data = ExtResource("1_rfikm")
+metadata/_custom_type_script = "uid://dipuet8c4utmg"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bjvqrr5poqski"]
+
+[ext_resource type="Resource" uid="uid://dc88bk81vhn08" path="res://data/farming/data/resource/turnip.tres" id="1_vd132"]
+[ext_resource type="Texture2D" uid="uid://djo17j2e7e3ba" path="res://assets/farming/seed/textura/turnip_seed_textura.svg" id="2_vk6om"]
+[ext_resource type="Script" uid="uid://dipuet8c4utmg" path="res://scripts/items/item_data.gd" id="3_ifah0"]
+
+[resource]
+script = ExtResource("3_ifah0")
+id = "turnip_seed"
+display_name = "Насіння ріпи"
+icon = ExtResource("2_vk6om")
+crop_data = ExtResource("1_vd132")
+metadata/_custom_type_script = "uid://dipuet8c4utmg"

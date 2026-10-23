@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://1fqql3rrqgva"]
+
+[ext_resource type="Script" uid="uid://dot7lrj1gmqy3" path="res://scripts/resource/resource_node.gd" id="1_ujm5k"]
+[ext_resource type="Resource" uid="uid://dmo5jn11xqylb" path="res://data/farming/objects/resource/turnip.tres" id="2_4we21"]
+[ext_resource type="Texture2D" uid="uid://fppy6hmwsqx0" path="res://assets/farming/recource/textura/turnip_textura.svg" id="3_phhvo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5n3x"]
+size = Vector2(40, 55)
+
+[node name="Turnip" type="StaticBody2D" unique_id=1720985940]
+scale = Vector2(0.15, 0.15)
+script = ExtResource("1_ujm5k")
+required_tool_id = "hand"
+resource_item = ExtResource("2_4we21")
+energy_cost = 0
+metadata/_custom_type_script = "uid://dot7lrj1gmqy3"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1089982197]
+texture = ExtResource("3_phhvo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=536576302]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_l5n3x")

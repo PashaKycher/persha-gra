@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CropData" format=3 uid="uid://bs3ho1vwc85u2"]
+
+[ext_resource type="Script" uid="uid://tuosw3w1c650" path="res://scripts/farming/crop_data.gd" id="1_v6n32"]
+
+[resource]
+script = ExtResource("1_v6n32")
+id = &"tomato"
+crop_name = "Помідор"
+seed_item_id = "tomato_seed"
+harvest_item_id = "tomato"
+metadata/_custom_type_script = "uid://tuosw3w1c650"

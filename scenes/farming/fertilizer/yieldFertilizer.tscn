@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cnwsbjuhxld7a"]
+
+[ext_resource type="Script" uid="uid://dot7lrj1gmqy3" path="res://scripts/resource/resource_node.gd" id="1_b4tne"]
+[ext_resource type="Resource" uid="uid://cw0fbkw1nc3ql" path="res://data/farming/objects/fertilizer/yield_fertilizer.tres" id="2_k417f"]
+[ext_resource type="Texture2D" uid="uid://cgvbcobi0xyjj" path="res://assets/farming/fertilizer/textura/yield_fertilizer_textura.svg" id="3_jf8pg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlk8m"]
+size = Vector2(40, 45)
+
+[node name="YieldFertilizer" type="StaticBody2D" unique_id=1720985940]
+scale = Vector2(0.15, 0.15)
+script = ExtResource("1_b4tne")
+required_tool_id = "hand"
+resource_item = ExtResource("2_k417f")
+energy_cost = 0
+metadata/_custom_type_script = "uid://dot7lrj1gmqy3"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1089982197]
+texture = ExtResource("3_jf8pg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=536576302]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_mlk8m")

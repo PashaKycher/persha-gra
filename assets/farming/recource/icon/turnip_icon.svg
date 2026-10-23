@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Бадилля / Листя -->
+  <path d="M32 26 C24 16, 14 18, 10 24 C14 30, 24 30, 32 26 Z" fill="#60963d" stroke="#385e23" stroke-width="2" stroke-linejoin="round" />
+  <path d="M32 26 C40 16, 50 18, 54 24 C50 30, 40 30, 32 26 Z" fill="#60963d" stroke="#385e23" stroke-width="2" stroke-linejoin="round" />
+  <path d="M32 28 C32 14, 32 8, 32 4 C36 10, 38 18, 32 28 Z" fill="#73af42" stroke="#385e23" stroke-width="2" stroke-linejoin="round" />
+  
+  <!-- Плід ріпи (бурякоподібна форма, біло-фіолетова) -->
+  <path d="M32 26 C18 26, 12 40, 20 52 C26 58, 38 58, 44 52 C52 40, 46 26, 32 26 Z" fill="#d1b3e0" stroke="#6a4c93" stroke-width="2.5" />
+  <path d="M32 26 C18 26, 12 40, 20 52 C26 58, 38 58, 44 52 C46 48, 42 34, 32 26 Z" fill="#b088d1" opacity="0.6" />
+  <!-- Верхня частина (фіолетова) -->
+  <path d="M32 26 C18 26, 14 36, 18 42 C24 38, 40 38, 46 42 C50 36, 46 26, 32 26 Z" fill="#845ec2" stroke="#6a4c93" stroke-width="2" />
+  
+  <!-- Хвостик знизу -->
+  <path d="M30 57 C31 61, 33 61, 34 57 Z" fill="#b088d1" stroke="#6a4c93" stroke-width="1.5" />
+</svg>

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c1q58tccwyykr"]
+
+[ext_resource type="Script" uid="uid://dipuet8c4utmg" path="res://scripts/items/item_data.gd" id="1_8idol"]
+[ext_resource type="Texture2D" uid="uid://gg6uph7u4vwr" path="res://assets/icons/tool/stone_hoe_icon.svg" id="1_n6sgg"]
+[ext_resource type="Resource" uid="uid://lpg5n0baffan" path="res://data/tools/data/stoneTools/stone_hoe_tool.tres" id="3_s1sby"]
+
+[resource]
+script = ExtResource("1_8idol")
+id = "stone_hoe"
+display_name = "Кам'яна мотика"
+max_stack = 1
+icon = ExtResource("1_n6sgg")
+tool_data = ExtResource("3_s1sby")
+metadata/_custom_type_script = "uid://dipuet8c4utmg"
